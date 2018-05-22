@@ -22,8 +22,8 @@ templates:
     buttons:
     - title: "great"
       payload: "great"
-    - title: "super sad"
-      payload: "super sad"
+    - title: "sad"
+      payload: "sad"
 
   utter_cheer_up:
   - text: "Here is something to cheer you up:"
@@ -37,6 +37,6 @@ templates:
 
   utter_goodbye:
   - text: "Bye"
-  
+
 # entities: pieces of info you want to extract from messages.
 # slots: information to keep track of during a conversation (example: users age).
