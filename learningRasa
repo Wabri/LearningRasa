@@ -31,3 +31,5 @@ per eseguire il training vero e proprio è necessario eseguire il comando <pytho
 questo comando comprende l'indicazione:
   - config: corrisponde alla configurazione del modello di machine learning
   - data: corrisponde al file o alla directory che contiene i training data
+il comando sopra genererà una directory con il nome indicato dall'oggetto --path in cui verranno inserite tutti i training del modello creato
+per usare questo modello dobbiamo eseguire il comando <python -m rasa_nlu.server --path project> questo aprirà la porta 5000 sul local host, a questo punto eseguendo una chiamata http://localhost:5000/parse?q=salve verrà restituito il risultato del natural language parsing sotto forma di json
