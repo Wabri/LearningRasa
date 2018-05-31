@@ -27,7 +27,7 @@ per visualizzare meglio questi training data installiamo rasa-nlu-trainer con il
 possiamo vedere quindi che è possibile creare degli esempi di training tramite questo strumento
 
 a questo punto dobbiamo creare un file di confugurazione, creiamo quindi il file config_spacy.yml
-per eseguire il training vero e proprio è necessario eseguire il comando <python -m rasa_nlu_train --config config/config_spacy.yml --data data/example/demo-rasa.yml --path project>
+per eseguire il training vero e proprio è necessario eseguire il comando <python -m rasa_nlu.train --config config/config_spacy.yml --data data/example/demo-rasa.yml --path project>
 questo comando comprende l'indicazione:
   - config: corrisponde alla configurazione del modello di machine learning
   - data: corrisponde al file o alla directory che contiene i training data
