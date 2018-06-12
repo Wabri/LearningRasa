@@ -1,0 +1,33 @@
+Rasa NLU
+
+<installation: pip install rasa_nlu>
+
+rasa nlu permette di processare messaggi e specificarne il loro intenti
+
+per fare questo è necessario avere un backend con cui comunicare, per farlo è possibile usare spaCy+sklearn
+per installarli basta eseguire i comandi <pip install rasa_nlu[spacy]> <python -m spacy download en_core_web_md> <python -m spacy link en_core_web_md en>
+
+possiamo assumere che tutto ciò che l'utente dirà al bot sara possibile cateorizzarlo in intenti (intents)
+quindi la prima cosa che resa nlu fa è quella di assegnare ogni sentenza fatta dall'utente in una delle categorie definite precedentemente
+la fase successiva è quella di etichettare alcune parole che sono importanti per la comprensione della sentenza, queste vengono chiamate entità (entities)
+
+per sviluppare un chatbot è necessario avere un set di training data, che sono dei veri e propri allenamenti dell'intelligenza artificiale sotto forma di json
+questi training data devono includere sia il testo interpretato che i dati strutturati in intenti ed entità
+alcuni esempi di training data li ho inseriti in demo/example/demo-rasa.json
+dalla linea 13 ho impostato alcuni esempi comuni, questi esempi sono composti principalmente da:
+  - text
+  - intents
+  - entities
+corrispondenti quindi a:
+  - testo
+  - intenti
+  - entità
+precedentemente spiegate.
+per visualizzare meglio questi training data installiamo rasa-nlu-trainer con il comando <npm i -g rasa-nlu-trainer> e poi con un terminale lanciare il comando <rasa-nlu-trainer>
+possiamo vedere quindi che è possibile creare degli esempi di training tramite questo strumento
+
+a questo punto dobbiamo creare un file di confugurazione, creiamo quindi il file config_spacy.yml
+per eseguire il training vero e proprio è necessario eseguire il comando <python -m rasa_nlu.train --config config/config_spacy.yml --data data/example/demo-rasa.yml --path project>
+questo comando comprende l'indicazione:
+  - config: corrisponde alla configurazione del modello di machine learning
+  - data: corrisponde al file o alla directory che contiene i training data

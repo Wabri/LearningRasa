@@ -224,5 +224,6 @@ eseguendo una richiesta "pagare mario 100 euro" avremo un output di questo tipo
   "model": "model_20180612-155926"
 }
 che è il risultato corrispondente alla nostra richiesta.
-
+Usando questi data training non potrà funzionare il rasa-nlu-trainer grafico,
+ma useremo direttamente la console messa a disposizione da dialogflow.
 (https://nlu.rasa.com/dataformat.html)
