@@ -1,0 +1,36 @@
+{
+  "rasa_nlu_data": {
+    "common_examples": [
+      {
+        "intent": "payRequest",
+        "text": "paga"
+      },
+      {
+        "intent": "payRequest",
+        "entities": [
+          {
+            "start": 5,
+            "end": 10,
+            "value": "mario",
+            "entity": "beneficiario"
+          },
+          {
+            "start": 11,
+            "end": 14,
+            "value": "100",
+            "entity": "value"
+          },
+          {
+            "start": 15,
+            "end": 19,
+            "value": "euro",
+            "entity": "currency"
+          }
+        ],
+        "text": "paga mario 100 euro"
+      }
+    ],
+    "regex_features": [],
+    "entity_synonyms": []
+  }
+}

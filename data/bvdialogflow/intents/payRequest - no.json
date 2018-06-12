@@ -1,0 +1,33 @@
+{
+  "id": "30c06adf-3c9a-4c86-9dcb-1a50ab84deaa",
+  "parentId": "85c8c63c-826a-42d5-860e-b18565eccec1",
+  "rootParentId": "85c8c63c-826a-42d5-860e-b18565eccec1",
+  "name": "payRequest - no",
+  "auto": true,
+  "contexts": [
+    "payRequest-followup"
+  ],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "payRequest.payRequest-no",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "it",
+          "speech": "Allora non pagherò nessuno!"
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1525874305,
+  "fallbackIntent": false,
+  "events": []
+}

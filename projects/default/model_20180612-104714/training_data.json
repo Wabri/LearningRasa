@@ -1,0 +1,7 @@
+{
+  "rasa_nlu_data": {
+    "common_examples": [],
+    "regex_features": [],
+    "entity_synonyms": []
+  }
+}

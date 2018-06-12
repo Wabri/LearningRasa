@@ -1,0 +1,64 @@
+{
+  "rasa_nlu_data": {
+    "common_examples": [
+      {
+        "intent": "greetings",
+        "text": "ciao"
+      },
+      {
+        "intent": "payRequest",
+        "entities": [
+          {
+            "start": 5,
+            "end": 9,
+            "value": "mario",
+            "entity": "beneficiario"
+          },
+          {
+            "start": 11,
+            "end": 13,
+            "value": "100",
+            "entity": "value"
+          },
+          {
+            "start": 15,
+            "end": 18,
+            "value": "euro",
+            "entity": "currency"
+          }
+        ],
+        "text": "paga mario 100 euro"
+      },
+      {
+        "intent": "payRequest",
+        "entities": [
+          {
+            "start": 5,
+            "end": 11,
+            "value": "alberto",
+            "entity": "beneficiario"
+          },
+          {
+            "start": 13,
+            "end": 16,
+            "value": "2000",
+            "entity": "value"
+          },
+          {
+            "start": 17,
+            "end": 20,
+            "value": "euro",
+            "entity": "currency"
+          }
+        ],
+        "text": "paga alberto 2000 euro"
+      },
+      {
+        "intent": "greetings",
+        "text": "salve"
+      }
+    ],
+    "regex_features": [],
+    "entity_synonyms": []
+  }
+}

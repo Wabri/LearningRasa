@@ -1,0 +1,87 @@
+{
+  "id": "85c8c63c-826a-42d5-860e-b18565eccec1",
+  "name": "payRequest",
+  "auto": true,
+  "contexts": [],
+  "responses": [
+    {
+      "resetContexts": false,
+      "affectedContexts": [
+        {
+          "name": "payRequest-followup",
+          "parameters": {},
+          "lifespan": 2
+        }
+      ],
+      "parameters": [
+        {
+          "id": "250b3db0-1a57-42d2-bbe1-31e86812de46",
+          "required": true,
+          "dataType": "@payRequest",
+          "name": "payRequest",
+          "value": "$payRequest",
+          "prompts": [
+            {
+              "lang": "it",
+              "value": "Cosa vuoi fare?"
+            }
+          ],
+          "isList": false
+        },
+        {
+          "id": "8f2fda95-c554-45a4-9440-034e2b0997e1",
+          "required": true,
+          "dataType": "@payToSomeone",
+          "name": "payToSomeone",
+          "value": "$payToSomeone",
+          "prompts": [
+            {
+              "lang": "it",
+              "value": "Chi vuoi pagare?"
+            }
+          ],
+          "isList": false
+        },
+        {
+          "id": "3cc9f24e-c840-44d8-bd19-df72abb4bd24",
+          "required": true,
+          "dataType": "@sys.number",
+          "name": "number",
+          "value": "$number",
+          "prompts": [
+            {
+              "lang": "it",
+              "value": "Quanto lo vuoi pagare?"
+            }
+          ],
+          "isList": false
+        },
+        {
+          "id": "e7d288f6-d97c-4d74-aaf0-f9309fdd5b1d",
+          "required": false,
+          "dataType": "@sys.currency-name",
+          "name": "currency-name",
+          "value": "$currency-name",
+          "prompts": [],
+          "defaultValue": "euro",
+          "isList": false
+        }
+      ],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "it",
+          "speech": "Allora devo pagare $payToSomeone per un totale di $number $currency-name?"
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1526458086,
+  "fallbackIntent": false,
+  "events": []
+}
