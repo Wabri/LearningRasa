@@ -90,3 +90,61 @@ per facilità scarichiamo un set di dati già preimpostato:
 https://github.com/RasaHQ/rasa_nlu/blob/master/data/examples/rasa/demo-rasa.json
 creiamo una cartella data/examples/rasa in cui andrà il file demo-rasa.json.
 copiamo incolliamo il contenuto del sito all'interno di questo file.
+
+esiste un tool grafico per la modifica e aggiunta dei data test, è possibile
+installarlo tramite la repository: https://github.com/RasaHQ/rasa-nlu-trainer
+una volta installato tramite node package manager è possibile eseguirlo
+direttamente nella cartella in cui si trova il file json dei training tramite
+il comando omonimo:
+$ rasa-nlu-trainer
+che aprirà una pagina web ospitata in localhost in cui si troveranno tutti i
+train attuali dell'intelligenza. usando questo strumento risulta molto più
+semplice creare dei set di dati.
+
+andremo ora a definire la configurazione del backend dell'intelligenza.
+Creiamo quindi il file config_spacy.yml nella cartella di lavoro con il seguente
+codice:
+
+language: "it"
+
+pipeline: "spacy_sklearn"
+
+a questo punto abbiamo tutto quello di cui abbiamo bisogno per generare alcuni
+modelli che il backend potrà usare, eseguiamo il comando python:
+$ python -m rasa_nlu.train --config path_to_config --data path_to_data --path projects
+l'indicazione config è la configurazione del modello di machine learning
+l'indicazione data è il file o la cartella in cui sono contenuti i dati di
+training
+l'indicazione --path è l'output effettivo del modello che verrà creato
+ci metterà un po' ma quando avrà finito dovremmo vedere una cartella projects in
+cui avremo il nostro modello appena creato
+
+per usare il modello creato precedentemente è necessario eseguire il comando
+$ python -m rasa_nlu.server --path projects
+che andrà a prendere il modello default nella cartella projects. a questo punto
+facendo una chiamata get all'indirizzo localhost:5000/parse?q=ciao dovremmo
+ricevere in output un file json con le informazioni del parsing fatto:
+{
+  "intent": {
+    "name": "saluto",
+    "confidence": 0.5345603412153835
+  },
+  "entities": [],
+  "intent_ranking": [
+    {
+      "name": "saluto",
+      "confidence": 0.5345603412153835
+    },
+    {
+      "name": "ringraziamento",
+      "confidence": 0.2604707895172954
+    },
+    {
+      "name": "ricercaRistorante",
+      "confidence": 0.20496886926732114
+    }
+  ],
+  "text": "ciao",
+  "project": "default",
+  "model": "model_20180612-152415"
+}
