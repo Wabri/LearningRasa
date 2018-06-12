@@ -36,4 +36,57 @@ $ python -m spacy link it_core_news_sm it
 esplicitare il collegamento con il secondo comando)
 
 a questo punto possiamo fare un esempio: creare un bot per la ricerca
-di ristoranti. 
+di ristoranti. Definiamo quindi 3 tipologie di intenti:
+ - saluto
+ - ricercaRistorante
+ - ringraziamento
+è ovvio che ci sono diversi modi per salutare:
+ - ciao
+ - salve
+ - buongiorno
+e diversi modi per richidere informazioni per un ristorante:
+ - conosci qualche posto per mangiare la pizza in centro?
+ - ho fame!
+ - sono a nord della città e voglio mangiare messicano.
+quindi la prima cosa che deve fare rasa è quello di riconoscere l'intento
+del testo, nel nostro caso deve dire se preso un testo quello rientra nei casi
+di intento: saluto, ricercaRistorante, ringraziamento. Subito dopo deve
+riconoscere ed etichettare delle parole chiave definendo delle entità.
+Per esempio se abbiamo "sono a nord della città e voglio mangiare messicano"
+rasa deve capire che questo testo corrisponde all'intento di ricercaRistorante,
+e che ci sono 2 entità che è possibile estrapolare che sono: "nord" che
+rappresenta una posizione, "messicano" che rappresenta il tipo di cucina.
+
+per potergli far fare questa magia è necessario allenare l'intelligenza.
+Il training è fondamentale, più dati abbiamo e più intellingente sarà il nostro
+bot. nel caso precedente abbiamo preso la frase "sono a nord della città e
+voglio mangiare messicano" per far comprendere questa frase all'ai dobbiamo
+trascriverla sotto forma di file json in questo modo:
+{
+  "text":"sono a nord della città e voglio mangiare messicano",
+  "intent":"ricercaRistorante",
+  "entities": [
+  {
+  "start":7,
+  "end":10,
+  "value":"nord",
+  "entity":"posizione",
+  }, {
+  "start":42,
+  "end":50,
+  "value":"messicano",
+  "entity":"cucina"
+  }
+  ]
+}
+questo è l'unico modo in cui l'intelligenza artificiale comprenderà la frase.
+possiamo fare un altro esempio più semplice la frase "ciao":
+{
+  "text":"ciao",
+  "intent":"saluto",
+  "entities": [ ]
+}
+per facilità scarichiamo un set di dati già preimpostato:
+https://github.com/RasaHQ/rasa_nlu/blob/master/data/examples/rasa/demo-rasa.json
+creiamo una cartella data/examples/rasa in cui andrà il file demo-rasa.json.
+copiamo incolliamo il contenuto del sito all'interno di questo file.
