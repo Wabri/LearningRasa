@@ -1,0 +1,39 @@
+Rasa NLU
+
+è uno strumento per fare il natural language understanding (NLU)
+
+è un open source tool che permette la classificazione degli intenti e
+l'estrazione delle entità usate negli intenti
+
+prendiamo per esempio la frase: "Sto cercando un ristorante messicano in centro"
+il risultato che otterremo è un json di questo tipo:
+{
+  "intent": "ricerca_ristorante",
+  "entities": {
+    "cuisine" : "messicano",
+    "location" : "centro"
+  }
+}
+quindi gli intent non sono altro che l'intento della frase, mentre le entities
+sono gli oggetti della frase che possono essere utili
+
+questo strumento quindi serve per processare i messaggi. Infatti c'è un
+componente per la classificazione dell'intento e diversi componenti invece
+per il riconoscimento delle entità
+
+per installare questo strumento è necessario python e pip:
+$ pip install rasa_nlu
+
+è possibile eseguire rasa con molti backends, la scelta migliore è spacy+sklearn
+per installare questi strumenti eseguiamo i comandi:
+$ pip install -U spacy
+$ pip install rasa_nlu[spacy]
+in questo modo saranno installati rasa_nlu e spacy
+ora è necessario scaricare le librerie dei linguaggi per NLU
+$ python -m spacy download it
+$ python -m spacy link it_core_news_sm it
+(teoricamente crea già il link direttamente con il primo comando ma nel caso
+esplicitare il collegamento con il secondo comando)
+
+a questo punto possiamo fare un esempio: creare un bot per la ricerca
+di ristoranti. 
