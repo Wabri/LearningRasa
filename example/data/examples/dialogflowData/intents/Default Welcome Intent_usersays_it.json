@@ -1,0 +1,102 @@
+[
+  {
+    "id": "c34b6c22-8d17-4e6f-97a6-f432e8b60ab6",
+    "data": [
+      {
+        "text": "salve",
+        "meta": "@sys.ignore",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 2,
+    "updated": 0
+  },
+  {
+    "id": "7b5f0b67-7de2-4d0d-9a68-d6cf20a7aef3",
+    "data": [
+      {
+        "text": "ciao",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 66,
+    "updated": 0
+  },
+  {
+    "id": "b451aa6c-3923-4e27-a178-cadba610b4ff",
+    "data": [
+      {
+        "text": "hei",
+        "meta": "@sys.ignore",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "25a7f963-bf51-4874-83cb-22e1123ba671",
+    "data": [
+      {
+        "text": "salve",
+        "alias": "geo-city",
+        "meta": "@sys.geo-city",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "a3c06ba2-fa6b-4695-add1-9d0604f50c8d",
+    "data": [
+      {
+        "text": "ciao ciao ciao",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "9a5fa19f-930c-467a-b180-01aac764b1f0",
+    "data": [
+      {
+        "text": "Hola",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "541660ca-54d5-47c4-963a-ee875fbd448c",
+    "data": [
+      {
+        "text": "ciaone",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 1,
+    "updated": 0
+  },
+  {
+    "id": "ec2ee812-a6fe-4349-9955-04f343d52498",
+    "data": [
+      {
+        "text": "Ciao ciao",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 2,
+    "updated": 0
+  }
+]

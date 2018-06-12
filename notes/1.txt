@@ -148,3 +148,81 @@ ricevere in output un file json con le informazioni del parsing fatto:
   "project": "default",
   "model": "model_20180612-152415"
 }
+
+Avendo già effettuato un training molto grande da dialogflow posso estrarre
+questi dati per usarli da rasa. Per farlo basterà scaricare il file zip
+direttamente da dialogflow e estrarre il contenuto in una cartella, nel nostro
+caso la metteremo all'interno di data/example/dialogflowData. estraendone il
+contenuto otterremo 2 cartelle: entities e intents; e 2 json: agent e package.
+per poter usare questi file possiamo eseguire il comando:
+$ python -m rasa_nlu.train --config config/config_spacy.yml --data data/examples/rasa/ --path projectsDialogflow
+questo creerà un modello come prima, ma dato che ci sono molti più dati, avremo
+un modello molto più cospicuo.
+a questo punto possiamo usare il nostro modello da backend eseguendo il solito
+comando:
+$ python -m rasa_nlu.server --path projectsDialogflow
+eseguendo una richiesta "pagare mario 100 euro" avremo un output di questo tipo
+{
+  "intent": {
+    "name": "payRequest",
+    "confidence": 0.9346916129148384
+  },
+  "entities": [
+    {
+      "start": 0,
+      "end": 6,
+      "value": "pagare",
+      "entity": "payRequest",
+      "confidence": 0.9881267419312998,
+      "extractor": "ner_crf"
+    },
+    {
+      "start": 7,
+      "end": 12,
+      "value": "mario",
+      "entity": "payToSomeone",
+      "confidence": 0.9866899484313593,
+      "extractor": "ner_crf"
+    },
+    {
+      "start": 13,
+      "end": 16,
+      "value": "100",
+      "entity": "number",
+      "confidence": 0.9855790946392894,
+      "extractor": "ner_crf"
+    },
+    {
+      "start": 17,
+      "end": 21,
+      "value": "euro",
+      "entity": "currency-name",
+      "confidence": 0.9336220285338104,
+      "extractor": "ner_crf"
+    }
+  ],
+  "intent_ranking": [
+    {
+      "name": "payRequest",
+      "confidence": 0.9346916129148384
+    },
+    {
+      "name": "payRequest - yes",
+      "confidence": 0.0363128329170857
+    },
+    {
+      "name": "payRequest - no",
+      "confidence": 0.018627551951329074
+    },
+    {
+      "name": "Default Welcome Intent",
+      "confidence": 0.010368002216746724
+    }
+  ],
+  "text": "pagare mario 100 euro",
+  "project": "default",
+  "model": "model_20180612-155926"
+}
+che è il risultato corrispondente alla nostra richiesta.
+
+(https://nlu.rasa.com/dataformat.html)

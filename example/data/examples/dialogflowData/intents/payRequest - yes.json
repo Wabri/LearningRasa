@@ -1,0 +1,33 @@
+{
+  "id": "ca02c7b7-9bab-4a08-98b5-e00845af94e7",
+  "parentId": "85c8c63c-826a-42d5-860e-b18565eccec1",
+  "rootParentId": "85c8c63c-826a-42d5-860e-b18565eccec1",
+  "name": "payRequest - yes",
+  "auto": true,
+  "contexts": [
+    "payRequest-followup"
+  ],
+  "responses": [
+    {
+      "resetContexts": false,
+      "action": "payRequest.payRequest-yes",
+      "affectedContexts": [],
+      "parameters": [],
+      "messages": [
+        {
+          "type": 0,
+          "lang": "it",
+          "speech": "perfetto!"
+        }
+      ],
+      "defaultResponsePlatforms": {},
+      "speech": []
+    }
+  ],
+  "priority": 500000,
+  "webhookUsed": false,
+  "webhookForSlotFilling": false,
+  "lastUpdate": 1525874146,
+  "fallbackIntent": false,
+  "events": []
+}

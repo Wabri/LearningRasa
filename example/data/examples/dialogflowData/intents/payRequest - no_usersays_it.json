@@ -1,0 +1,134 @@
+[
+  {
+    "id": "2208a14d-b02a-437d-9e7e-a10aaa6a0b6c",
+    "data": [
+      {
+        "text": "no",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 2,
+    "updated": 1526458086
+  },
+  {
+    "id": "2ee57713-6385-41a5-97ed-a268dc048528",
+    "data": [
+      {
+        "text": "niente",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "22b9a439-8f92-4e21-9e48-96487bb2def8",
+    "data": [
+      {
+        "text": "assolutamente no",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1525874305
+  },
+  {
+    "id": "4b93fd1c-39be-4bae-b6df-0d3a21fd7efa",
+    "data": [
+      {
+        "text": "nessuno",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "b638115d-693c-458a-bc3b-800f8a5f1d27",
+    "data": [
+      {
+        "text": "non voglio",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1525874305
+  },
+  {
+    "id": "cf19224f-7fcd-4260-8428-542bcb8ba693",
+    "data": [
+      {
+        "text": "non sono d\u0027accordo",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1525874305
+  },
+  {
+    "id": "8418e586-7ef4-40b7-a9b7-0133e99afefa",
+    "data": [
+      {
+        "text": "non credo",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1525874305
+  },
+  {
+    "id": "bfb6cfb8-af4b-4e7c-8d4a-2dc21b5a3162",
+    "data": [
+      {
+        "text": "non farlo",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1525874305
+  },
+  {
+    "id": "887ba9bb-357f-4c62-ae5b-0f69bb3cd2f8",
+    "data": [
+      {
+        "text": "non proprio",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1525874305
+  },
+  {
+    "id": "3992bd5a-eb65-4f04-93f6-1bcb803fe4e4",
+    "data": [
+      {
+        "text": "no grazie",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1525874305
+  },
+  {
+    "id": "8b68e874-5be9-45bf-96db-9bfcb10dd7b6",
+    "data": [
+      {
+        "text": "non mi interessa",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1525874305
+  }
+]
