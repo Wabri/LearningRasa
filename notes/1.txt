@@ -292,3 +292,29 @@ i training data possono essere salvati in singoli file o in file diversi.
 per grandi progetti con molti intenti e entità questo migliora la mantenibilità
 perchè è possibile dividere in file diversi i training di diversi intenti,
 invece di mantenerli su un singolo file.
+
+è possibile eseguire un server http che riceva le richieste usando il comando:
+$ python -m rasa_nlu.server --path projects
+il server andrà a guardare se esistono dei progetti sotto la cartella path
+indicata dal parametro, altrimenti di default andrà a prendere l'ultimo modello
+di training. il server può emulare i servizi: wit, luis e dialogflow. in questo
+modo se esportiamo a partire da questi servizi la sintassi rimarrà la solita.
+per farlo basta inserire il parametro emulate indicando il tipo di emulazione:
+$ python -m rasa_nlu.server --path projects --emulate dialogflow
+una volta avviato il server è possibile usarlo da un endpoint tramite richieste
+post:
+ - parse, restituisce il risultato del parsing di una frase:
+    http://localhost:5000/parse?q=<frase da parsare>
+ - version, restituisce la versione del modello usato
+ - config, restituisce la configurazione attualmente in uso
+ - status, restituisce lo stato attuale del server
+per proteggere il server è possibile specificare un token nelle configurazioni
+di rasa, aggiungendo "token":"12345" al file di configurazione o settando
+RASA_TOKEN nelle variabili d'ambiente. se è stato settato allora per tutte le
+richieste sarà necessario la specifica del token, per esempio nella richiesta
+status:
+localhost:5000/status?token=12345
+questo è necessario quando si vuole chiamare il server da un altro dominio (per
+esempio da un interfaccia training web), per rendere possibile la trasmissione
+di dati sarà necessario aggiungere in whitelist il dominio nel cors_origin.
+il cors origin sono le configurazioni di CORS (cross origin resource sharing).
