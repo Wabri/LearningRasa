@@ -226,4 +226,69 @@ eseguendo una richiesta "pagare mario 100 euro" avremo un output di questo tipo
 che è il risultato corrispondente alla nostra richiesta.
 Usando questi data training non potrà funzionare il rasa-nlu-trainer grafico,
 ma useremo direttamente la console messa a disposizione da dialogflow.
-(https://nlu.rasa.com/dataformat.html)
+
+il training data per Rasa nlu è strutturato in parti differenti:
+common_examples, entity_synonyms e regex_features.
+{
+  "rasa_nlu_data" : {
+    "common_examples":[],
+    "regex_features":[],
+    "entity_synonyms":[]
+  }
+}
+quello più importante è quello degli esempi comuni common_examples. questo
+viene usato per fare il train delle entità e degli intenti del modello.
+i regex_features sono un tool per aiutare la classificazione delle entità o
+degli intenti, aumentando la performance.
+per la creazione di questi dataset esistono molti tool come:
+tracy (https://yuukanoo.github.io/tracy) e
+Chatito (https://rodrigopivi.github.io/Chatito/)
+
+i common_examples ha 3 componenti:
+ - testo, è un esempio di come dovrebbe presentarsi la frase dove eseguire il
+ parsing;
+ - intento, è l'intento (scopo) associato al testo;
+ - entità, sono parti specifiche nel test a cui è possibile associare un
+ identificatore.
+i primi 2 sono stringhe mentre l'ultimo è un array.
+
+la parte di entity_synonyms è la parte in cui vengono indicati i sinonimi che è
+possibile trovare in una frase. per esempio la parola "pagare" nel nostro caso
+ha lo stesso significato di "paga" dato che la raggruppiamo nello stesso gruppo
+di entità "payRequest". un altro esempio generico può essere "New York" e "NY"
+entrambi hanno lo stesso significato corrispondente all'entità luogo che non
+differenzierà tra le due parole e gli assegnerà un unico valore:
+{
+  "rasa_nlu_data": {
+    "entity_synonyms": [
+      {
+        "value": "New York",
+        "synonyms": ["NY", "ny", "the big apple"]
+      }
+    ]
+  }
+}
+
+le regex_features non sono altro che le regular expression che possono essere
+usate come supporto alla classificazione degli intenti e delle entità. per
+esempio un codice postale (chiamato anche zipcode) è sempre formato da 5 numeri
+compresi tra 0 e 9, che possiamo rappresentare nella nostra configurazione come:
+{
+    "rasa_nlu_data": {
+        "regex_features": [
+            {
+                "name": "zipcode",
+                "pattern": "[0-9]{5}"
+            },
+            {
+                "name": "greet",
+                "pattern": "hey[^\\s]*"
+            },
+        ]
+    }
+}
+
+i training data possono essere salvati in singoli file o in file diversi.
+per grandi progetti con molti intenti e entità questo migliora la mantenibilità
+perchè è possibile dividere in file diversi i training di diversi intenti,
+invece di mantenerli su un singolo file.
