@@ -327,4 +327,9 @@ non fatti:
  - https://nlu.rasa.com/languages.html
  - https://nlu.rasa.com/pipeline.html
 
- 
+è possibile valutare le performance di riconoscimento di intenti e entità del
+modello che abbiamo creato usando lo script python "evaluate":
+$ python -m rasa_nlu.evaluate --data path_to_data --model path_to_model
+in cui model specifica il modello da valutare specificando i data test con data.
+questo genererà delle misure di log precision, recall, e f1 per ogni intento e
+le riassumerà tutte insieme.
