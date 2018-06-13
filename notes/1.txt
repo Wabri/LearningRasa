@@ -318,3 +318,13 @@ questo è necessario quando si vuole chiamare il server da un altro dominio (per
 esempio da un interfaccia training web), per rendere possibile la trasmissione
 di dati sarà necessario aggiungere in whitelist il dominio nel cors_origin.
 il cors origin sono le configurazioni di CORS (cross origin resource sharing).
+
+non fatti:
+ - https://nlu.rasa.com/python.html
+ - https://nlu.rasa.com/entities.html
+ - https://nlu.rasa.com/closeloop.html
+ - https://nlu.rasa.com/persist.html
+ - https://nlu.rasa.com/languages.html
+ - https://nlu.rasa.com/pipeline.html
+
+ 
