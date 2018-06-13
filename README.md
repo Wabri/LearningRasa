@@ -21,7 +21,7 @@ Quindi gli intent non sono altro che lo scopo della frase, mentre le entities so
 Questo strumento quindi serve per processare i messaggi. Infatti c'è un componente per la classificazione dell'intento e diversi componenti invece
 per il riconoscimento delle entità.
 
-# Intallazione
+## Intallazione
 Per installare questo strumento è necessario python e pip:
 ```
 $ pip install rasa_nlu
@@ -40,7 +40,7 @@ $ python -m spacy link it_core_news_sm it
 ```
 *** (teoricamente crea già il link direttamente con il primo comando ma nel caso esplicitare il collegamento con il secondo comando) ***
 
-# Esempio
+## Esempio
 A questo punto possiamo fare un esempio: creare un bot per la ricerca di ristoranti.
 
 Definiamo quindi 3 tipologie di intenti:
@@ -64,7 +64,7 @@ Subito dopo deve riconoscere ed etichettare delle parole chiave definendo delle 
 1. "nord" che rappresenta una posizione,
 2. "messicano" che rappresenta il tipo di cucina.
 
-# Training
+## Training
 Per poter fare tutto ciò è necessario allenare l'intelligenza. Il training è fondamentale, più dati abbiamo e più intellingente sarà la nostra intelligenza. Nel caso precedente abbiamo preso la frase ** "sono a nord della città e voglio mangiare messicano"** per far comprendere questa frase all'ai dobbiamo trascriverla sotto forma di file json in questo modo:
 ```
 {
@@ -96,7 +96,7 @@ questo è l'unico modo in cui l'intelligenza artificiale comprenderà la frase. 
 Per evitare di perdere tempo scarichiamo un set di dati già preimpostato: [demo-rasa.json](https://github.com/RasaHQ/rasa_nlu/blob/master/data/examples/rasa/demo-rasa.json).
 Creiamo quindi una cartella data/examples/rasa in cui andrà il file demo-rasa.json. copiamo incolliamo il contenuto del sito all'interno di questo file.
 
-#### * Piccolo approfondimento per il training dell'intelligenza *
+##### * Piccolo approfondimento per il training dell'intelligenza *
 Esiste un tool grafico per la modifica e aggiunta dei data test, è possibile
 installarlo tramite la repository:
 [rasa-nlu-trainer](https://github.com/RasaHQ/rasa-nlu-trainer). Una volta installato tramite node package manager è possibile eseguirlo
@@ -107,7 +107,7 @@ $ rasa-nlu-trainer
 Che aprirà una pagina web ospitata in localhost in cui si troveranno tutti i
 train attuali dell'intelligenza.
 
-# Backend
+## Backend
 Andiamo ora a definire la configurazione del backend dell'intelligenza. Creiamo quindi il file ** config_spacy.yml ** nella cartella di lavoro con il seguente
 codice:
 ```
@@ -156,7 +156,8 @@ ricevere in output un file json con le informazioni del parsing fatto:
   "model": "model_20180612-152415"
 }
 ```
-# Esportare dati da Dialogflow
+
+## Esportare dati da Dialogflow
 
 Avendo già effettuato un training molto grande da dialogflow posso estrarre
 questi dati per usarli da rasa. Per farlo basterà scaricare il file zip
@@ -247,7 +248,7 @@ Che è il risultato corrispondente al parsing della frase usando il modello gene
 
 ***(Usando questi data training non potrà funzionare il rasa-nlu-trainer che abbiamo usato prima, ma useremo direttamente la console messa a disposizione da dialogflow.)***
 
-# Struttura del Training Data
+## Struttura del Training Data
 
 Il training data per Rasa nlu è strutturato in parti differenti:
   1. common_examples,
@@ -308,7 +309,7 @@ Le **regex_features** non sono altro che le *regular expression* che possono ess
 
 I training data possono essere salvati in singoli file o in file diversi. Per grandi progetti con molti intenti e entità questo migliora la mantenibilità perchè è possibile dividere in file diversi i training di diversi intenti, invece di mantenerli su un singolo file.
 
-# Server ed emulazione
+## Server ed emulazione
 
 Possiamo eseguire un server http che riceva le richieste usando il comando:
 ```
@@ -349,7 +350,7 @@ Non fatti:
  - https://nlu.rasa.com/pipeline.html
 -->
 
-# Evaluate model
+## Evaluate model
 
 Possiamo valutare le performance di riconoscimento degli intenti e delle entità del modello che abbiamo creato usando lo script python **"evaluate.py"**, eseguendolo come segue:
 ```
