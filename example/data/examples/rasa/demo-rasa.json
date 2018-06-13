@@ -1,0 +1,71 @@
+{
+  "rasa_nlu_data": {
+    "regex_features": [{
+      "name": "greet",
+      "pattern": "hey[^\\s]*"
+    }],
+    "entity_synonyms": [{
+      "value": "chinese",
+      "synonyms": [
+        "Chinese",
+        "Chines",
+        "chines"
+      ]
+    }, {
+      "value": "vegetarian",
+      "synonyms": [
+        "veggie",
+        "vegg"
+      ]
+    }],
+    "common_examples": [{
+      "text": "ciao",
+      "intent": "saluto",
+      "entities": []
+    }, {
+      "text": "salve",
+      "intent": "saluto",
+      "entities": []
+    }, {
+      "text": "grazie",
+      "intent": "ringraziamento",
+      "entities": []
+    }, {
+      "text": "buongiorno",
+      "intent": "saluto",
+      "entities": []
+    }, {
+      "text": "conosci qualche posto per mangiare la pizza in centro?",
+      "intent": "ricercaRistorante",
+      "entities": [{
+        "start": 47,
+        "end": 53,
+        "value": "centro",
+        "entity": "posizione"
+      }, {
+        "start": 38,
+        "end": 43,
+        "value": "pizza",
+        "entity": "cucina"
+      }]
+    }, {
+      "text": "ho fame!",
+      "intent": "ricercaRistorante",
+      "entities": []
+    }, {
+      "text": "sono a nord della città e voglio mangiare messicano",
+      "intent": "ricercaRistorante",
+      "entities": [{
+        "start": 42,
+        "end": 51,
+        "value": "messicano",
+        "entity": "cucina"
+      }, {
+        "start": 7,
+        "end": 11,
+        "value": "nord",
+        "entity": "posizione"
+      }]
+    }]
+  }
+}

@@ -1,0 +1,1990 @@
+[
+  {
+    "id": "73413c3f-38e0-4912-a2e4-11dd05fd9210",
+    "data": [
+      {
+        "text": "Paga",
+        "alias": "payRequest",
+        "meta": "@payRequest",
+        "userDefined": true
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "norberto",
+        "alias": "payToSomeone",
+        "meta": "@payToSomeone",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "651d81b8-8790-451c-91e4-dc72ae6750e7",
+    "data": [
+      {
+        "text": "Pagare",
+        "alias": "payRequest",
+        "meta": "@payRequest",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 17,
+    "updated": 1526458086
+  },
+  {
+    "id": "4ac573ea-7b35-49bf-8b21-6cb816ad6487",
+    "data": [
+      {
+        "text": "Mamma",
+        "alias": "payToSomeone",
+        "meta": "@payToSomeone",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "9718a4c0-5577-49a0-b53b-615424dd9121",
+    "data": [
+      {
+        "text": "mario",
+        "alias": "payToSomeone",
+        "meta": "@payToSomeone",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 8,
+    "updated": 1526458086
+  },
+  {
+    "id": "74a07edd-8c64-4f23-b40b-2073dafddb91",
+    "data": [
+      {
+        "text": "300",
+        "alias": "number",
+        "meta": "@sys.number",
+        "userDefined": true
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "euro",
+        "alias": "currency-name",
+        "meta": "@sys.currency-name",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 1,
+    "updated": 0
+  },
+  {
+    "id": "bff71bb2-27d8-4728-aba4-4e2ae7e2fed3",
+    "data": [
+      {
+        "text": "300",
+        "alias": "number",
+        "meta": "@sys.number",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 1,
+    "updated": 1526458086
+  },
+  {
+    "id": "7affca48-d325-48e8-8224-12f4f9ead26a",
+    "data": [
+      {
+        "text": "si",
+        "alias": "payRequest",
+        "meta": "@payRequest",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 1,
+    "updated": 1526458086
+  },
+  {
+    "id": "5bcb1a1b-e234-430a-8562-11477d79f52b",
+    "data": [
+      {
+        "text": "50000000",
+        "alias": "number",
+        "meta": "@sys.number",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "ce36564f-17d9-4dc3-8ff7-3d3180964c17",
+    "data": [
+      {
+        "text": "paga",
+        "alias": "payRequest",
+        "meta": "@payRequest",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 9,
+    "updated": 1526458086
+  },
+  {
+    "id": "4db9ddcf-25a5-4a43-ab7e-8d633af3df89",
+    "data": [
+      {
+        "text": "Gianni",
+        "alias": "payToSomeone",
+        "meta": "@payToSomeone",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 2,
+    "updated": 1526458086
+  },
+  {
+    "id": "86c5869e-1296-4273-bc26-5778fdd30d0f",
+    "data": [
+      {
+        "text": "mario",
+        "alias": "payToSomeone",
+        "meta": "@payToSomeone",
+        "userDefined": true
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "100",
+        "alias": "number",
+        "meta": "@sys.number",
+        "userDefined": true
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "euro",
+        "alias": "currency-name",
+        "meta": "@sys.currency-name",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "6754a7aa-b7a9-49be-8ab7-117a8d5aa9eb",
+    "data": [
+      {
+        "text": "vorrei ",
+        "userDefined": false
+      },
+      {
+        "text": "pagare",
+        "alias": "payRequest",
+        "meta": "@payRequest",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "antonio",
+        "alias": "payToSomeone",
+        "meta": "@payToSomeone",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1526458086
+  },
+  {
+    "id": "d55c25af-ff19-4f4f-b831-a2d2b9a01fed",
+    "data": [
+      {
+        "text": "400",
+        "alias": "number",
+        "meta": "@sys.number",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 4,
+    "updated": 1526458086
+  },
+  {
+    "id": "54dc0877-0b19-402e-9e3b-468d061b9c4a",
+    "data": [
+      {
+        "text": "mariagrazia",
+        "alias": "payToSomeone",
+        "meta": "@payToSomeone",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1526458086
+  },
+  {
+    "id": "cbf659cc-a448-466a-b5a0-15e6345a5370",
+    "data": [
+      {
+        "text": "pagare",
+        "alias": "payRequest",
+        "meta": "@payRequest",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "maria",
+        "alias": "payToSomeone",
+        "meta": "@payToSomeone",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "450",
+        "alias": "number",
+        "meta": "@sys.number",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "euro",
+        "alias": "currency-name",
+        "meta": "@sys.currency-name",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 1,
+    "updated": 1526458086
+  },
+  {
+    "id": "8cb80cb1-9d52-40f9-9f8a-95b95be9a18e",
+    "data": [
+      {
+        "text": "paga",
+        "alias": "payRequest",
+        "meta": "@payRequest",
+        "userDefined": true
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "gianni",
+        "alias": "payToSomeone",
+        "meta": "@payToSomeone",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1526458086
+  },
+  {
+    "id": "44b57798-78c2-46ce-8bfa-89535badd14a",
+    "data": [
+      {
+        "text": "pagare",
+        "alias": "payRequest",
+        "meta": "@payRequest",
+        "userDefined": true
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "parmenide",
+        "alias": "payToSomeone",
+        "meta": "@payToSomeone",
+        "userDefined": true
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "500",
+        "alias": "number",
+        "meta": "@sys.number",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "euro",
+        "alias": "currency-name",
+        "meta": "@sys.currency-name",
+        "userDefined": true
+      },
+      {
+        "text": " in contanti",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1526458086
+  },
+  {
+    "id": "39eb2135-9b8f-4b48-b9d3-b2d786d4950f",
+    "data": [
+      {
+        "text": "paga",
+        "alias": "payRequest",
+        "meta": "@payRequest",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "Michael",
+        "alias": "payToSomeone",
+        "meta": "@payToSomeone",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "€",
+        "alias": "currency-name",
+        "meta": "@sys.currency-name",
+        "userDefined": false
+      },
+      {
+        "text": "12000",
+        "alias": "number",
+        "meta": "@sys.number",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "2aa1ff18-8b17-4024-89d3-ec269b2930dd",
+    "data": [
+      {
+        "text": "40000",
+        "alias": "number",
+        "meta": "@sys.number",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1526458086
+  },
+  {
+    "id": "903e7757-6152-40a0-9e0a-6767c9636dc6",
+    "data": [
+      {
+        "text": "100",
+        "alias": "number",
+        "meta": "@sys.number",
+        "userDefined": true
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "euro",
+        "alias": "currency-name",
+        "meta": "@sys.currency-name",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "f827ee79-237b-4b7e-9a9e-805201fb8acc",
+    "data": [
+      {
+        "text": "paga",
+        "alias": "payRequest",
+        "meta": "@payRequest",
+        "userDefined": true
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "€",
+        "alias": "currency-name",
+        "meta": "@sys.currency-name",
+        "userDefined": false
+      },
+      {
+        "text": "200",
+        "alias": "number",
+        "meta": "@sys.number",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "9bb36a08-f2ea-4f35-8740-b77fb325d76d",
+    "data": [
+      {
+        "text": "anna",
+        "alias": "payToSomeone",
+        "meta": "@payToSomeone",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1526458086
+  },
+  {
+    "id": "eb5f80fc-dd56-455d-91bc-94c3c2a445e8",
+    "data": [
+      {
+        "text": "Luca",
+        "alias": "payToSomeone",
+        "meta": "@payToSomeone",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "15ff2e93-1477-48e2-8673-17ddcc4e632d",
+    "data": [
+      {
+        "text": "paga",
+        "alias": "payRequest",
+        "meta": "@payRequest",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "alberto",
+        "alias": "payToSomeone",
+        "meta": "@payToSomeone",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 28,
+    "updated": 0
+  },
+  {
+    "id": "adaa4b67-938f-4f2d-a249-35e5a57a0fcc",
+    "data": [
+      {
+        "text": "200",
+        "alias": "number",
+        "meta": "@sys.number",
+        "userDefined": true
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "euro",
+        "alias": "currency-name",
+        "meta": "@sys.currency-name",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "c8f7ab4c-5ffe-4089-afcb-663ab043fdc1",
+    "data": [
+      {
+        "text": "paga",
+        "alias": "payRequest",
+        "meta": "@payRequest",
+        "userDefined": true
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "Gianni",
+        "alias": "payToSomeone",
+        "meta": "@payToSomeone",
+        "userDefined": true
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "€",
+        "alias": "currency-name",
+        "meta": "@sys.currency-name",
+        "userDefined": true
+      },
+      {
+        "text": "100",
+        "alias": "number",
+        "meta": "@sys.number",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 7,
+    "updated": 1526458086
+  },
+  {
+    "id": "ce1056ee-e85a-492e-996e-60f3b816b6d9",
+    "data": [
+      {
+        "text": "pagare",
+        "alias": "payRequest",
+        "meta": "@payRequest",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "antonio",
+        "alias": "payToSomeone",
+        "meta": "@payToSomeone",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "200",
+        "alias": "number",
+        "meta": "@sys.number",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "euro",
+        "alias": "currency-name",
+        "meta": "@sys.currency-name",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1526458086
+  },
+  {
+    "id": "dbbb046d-d327-40f9-b248-680d037f1feb",
+    "data": [
+      {
+        "text": "paga",
+        "alias": "payRequest",
+        "meta": "@payRequest",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "gabriele",
+        "alias": "payToSomeone",
+        "meta": "@payToSomeone",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "9000",
+        "alias": "number",
+        "meta": "@sys.number",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1526458086
+  },
+  {
+    "id": "47593671-3c06-4b96-af2a-c3ae44440007",
+    "data": [
+      {
+        "text": "Voglio ",
+        "userDefined": false
+      },
+      {
+        "text": "pagare",
+        "alias": "payRequest",
+        "meta": "@payRequest",
+        "userDefined": true
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "Annamaria",
+        "alias": "payToSomeone",
+        "meta": "@payToSomeone",
+        "userDefined": true
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "400",
+        "alias": "number",
+        "meta": "@sys.number",
+        "userDefined": true
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "euro",
+        "alias": "currency-name",
+        "meta": "@sys.currency-name",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 5,
+    "updated": 1526458086
+  },
+  {
+    "id": "7ed83945-b9ca-4b10-a602-be7be9b7d1b0",
+    "data": [
+      {
+        "text": "pagare",
+        "alias": "payRequest",
+        "meta": "@payRequest",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "piero",
+        "alias": "payToSomeone",
+        "meta": "@payToSomeone",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "855fdb1e-1d74-4340-832d-ec626f02db86",
+    "data": [
+      {
+        "text": "paga",
+        "alias": "payRequest",
+        "meta": "@payRequest",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "Giulia",
+        "alias": "payToSomeone",
+        "meta": "@payToSomeone",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "€",
+        "alias": "currency-name",
+        "meta": "@sys.currency-name",
+        "userDefined": false
+      },
+      {
+        "text": "1000",
+        "alias": "number",
+        "meta": "@sys.number",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "d7433bd9-8563-48f2-a925-b180ad071192",
+    "data": [
+      {
+        "text": "voglio ",
+        "userDefined": false
+      },
+      {
+        "text": "pagare",
+        "alias": "payRequest",
+        "meta": "@payRequest",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "marco",
+        "alias": "payToSomeone",
+        "meta": "@payToSomeone",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1526458086
+  },
+  {
+    "id": "a49df15c-2fd6-49c4-822d-e62036c6235a",
+    "data": [
+      {
+        "text": "2",
+        "alias": "number",
+        "meta": "@sys.number",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "4e4d553b-8f2e-4490-98f9-4a1fb6cc46a4",
+    "data": [
+      {
+        "text": "500",
+        "alias": "number",
+        "meta": "@sys.number",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "0e96582c-651b-489e-a92c-1582c8727d38",
+    "data": [
+      {
+        "text": "Paga",
+        "alias": "payRequest",
+        "meta": "@payRequest",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "Luca",
+        "alias": "payToSomeone",
+        "meta": "@payToSomeone",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "€",
+        "alias": "currency-name",
+        "meta": "@sys.currency-name",
+        "userDefined": false
+      },
+      {
+        "text": "200",
+        "alias": "number",
+        "meta": "@sys.number",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 1,
+    "updated": 0
+  },
+  {
+    "id": "4848697d-60db-48da-ab6e-517ba793b73c",
+    "data": [
+      {
+        "text": "Voglio ",
+        "userDefined": false
+      },
+      {
+        "text": "pagare",
+        "alias": "payRequest",
+        "meta": "@payRequest",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "Antonio",
+        "alias": "payToSomeone",
+        "meta": "@payToSomeone",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 8,
+    "updated": 1526458086
+  },
+  {
+    "id": "eaa06c47-227f-4611-819b-958bba4c3ce1",
+    "data": [
+      {
+        "text": "antonio",
+        "alias": "payToSomeone",
+        "meta": "@payToSomeone",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 3,
+    "updated": 1526458086
+  },
+  {
+    "id": "7fe1c997-7c84-48ec-bb7c-e5b3c6a1d34d",
+    "data": [
+      {
+        "text": "paga",
+        "alias": "payRequest",
+        "meta": "@payRequest",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "maria",
+        "alias": "payToSomeone",
+        "meta": "@payToSomeone",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 1,
+    "updated": 0
+  },
+  {
+    "id": "4ea96565-39fa-4949-91aa-ce98dd78e6d4",
+    "data": [
+      {
+        "text": "150",
+        "alias": "number",
+        "meta": "@sys.number",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1526458086
+  },
+  {
+    "id": "9c557815-55ba-4c61-9ce7-4efe1391b97c",
+    "data": [
+      {
+        "text": "Gianni",
+        "alias": "payToSomeone",
+        "meta": "@payToSomeone",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "€",
+        "alias": "currency-name",
+        "meta": "@sys.currency-name",
+        "userDefined": true
+      },
+      {
+        "text": "100",
+        "alias": "number",
+        "meta": "@sys.number",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 1,
+    "updated": 1526458086
+  },
+  {
+    "id": "e80eed98-7542-41bb-adbf-f1122525e538",
+    "data": [
+      {
+        "text": "paga",
+        "alias": "payRequest",
+        "meta": "@payRequest",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "Maria",
+        "alias": "payToSomeone",
+        "meta": "@payToSomeone",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "990bc910-fa6d-4767-99a7-51bef8ec67ae",
+    "data": [
+      {
+        "text": "Pagare",
+        "alias": "payRequest",
+        "meta": "@payRequest",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "ismaele",
+        "alias": "payToSomeone",
+        "meta": "@payToSomeone",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "50",
+        "alias": "number",
+        "meta": "@sys.number",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "euro",
+        "alias": "currency-name",
+        "meta": "@sys.currency-name",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 5,
+    "updated": 1526458086
+  },
+  {
+    "id": "48470b5c-59bd-4090-bbe7-ca9c2d1e70b5",
+    "data": [
+      {
+        "text": "paga",
+        "alias": "payRequest",
+        "meta": "@payRequest",
+        "userDefined": true
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "piero",
+        "alias": "payToSomeone",
+        "meta": "@payToSomeone",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "83eeeeae-03f1-432b-bfd2-eeac570e58a6",
+    "data": [
+      {
+        "text": "200",
+        "alias": "number",
+        "meta": "@sys.number",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 3,
+    "updated": 1526458086
+  },
+  {
+    "id": "7d1bad5c-d289-4b27-a0a8-f126899afa88",
+    "data": [
+      {
+        "text": "Pagare",
+        "alias": "payRequest",
+        "meta": "@payRequest",
+        "userDefined": true
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "Carmelo",
+        "alias": "payToSomeone",
+        "meta": "@payToSomeone",
+        "userDefined": true
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "100",
+        "alias": "number",
+        "meta": "@sys.number",
+        "userDefined": true
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "euro",
+        "alias": "currency-name",
+        "meta": "@sys.currency-name",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 4,
+    "updated": 1526458086
+  },
+  {
+    "id": "4aa382b6-beb3-4192-b426-6600cbd18419",
+    "data": [
+      {
+        "text": "paga",
+        "alias": "payRequest",
+        "meta": "@payRequest",
+        "userDefined": true
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "Giuditta",
+        "alias": "payToSomeone",
+        "meta": "@payToSomeone",
+        "userDefined": true
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "€",
+        "alias": "currency-name",
+        "meta": "@sys.currency-name",
+        "userDefined": false
+      },
+      {
+        "text": "5",
+        "alias": "number",
+        "meta": "@sys.number",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "6a77fb50-dff4-4e61-8bbd-460b088b90ad",
+    "data": [
+      {
+        "text": "Voglio ",
+        "userDefined": false
+      },
+      {
+        "text": "pagare",
+        "alias": "payRequest",
+        "meta": "@payRequest",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "francesco",
+        "alias": "payToSomeone",
+        "meta": "@payToSomeone",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "800",
+        "alias": "number",
+        "meta": "@sys.number",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "euro",
+        "alias": "currency-name",
+        "meta": "@sys.currency-name",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 2,
+    "updated": 1526458086
+  },
+  {
+    "id": "8da131ce-9d25-4f61-9548-99874eb9019a",
+    "data": [
+      {
+        "text": "paga",
+        "alias": "payRequest",
+        "meta": "@payRequest",
+        "userDefined": true
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "gabriele",
+        "alias": "payToSomeone",
+        "meta": "@payToSomeone",
+        "userDefined": true
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "300",
+        "alias": "number",
+        "meta": "@sys.number",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1526458086
+  },
+  {
+    "id": "f3268099-92de-407c-979d-27263d041214",
+    "data": [
+      {
+        "text": "voglio ",
+        "userDefined": false
+      },
+      {
+        "text": "pagare",
+        "alias": "payRequest",
+        "meta": "@payRequest",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1526458086
+  },
+  {
+    "id": "f618aef9-4145-40ea-ada1-95119a02dba3",
+    "data": [
+      {
+        "text": "voglio ",
+        "userDefined": false
+      },
+      {
+        "text": "pagare",
+        "alias": "payRequest",
+        "meta": "@payRequest",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "maria",
+        "alias": "payToSomeone",
+        "meta": "@payToSomeone",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 1,
+    "updated": 1526458086
+  },
+  {
+    "id": "6ffb46bc-4480-4396-80d0-41a6822db030",
+    "data": [
+      {
+        "text": "Pagare",
+        "alias": "payRequest",
+        "meta": "@payRequest",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "Carmelo",
+        "alias": "payToSomeone",
+        "meta": "@payToSomeone",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 5,
+    "updated": 1526458086
+  },
+  {
+    "id": "74c64274-8691-450e-8094-6250e1459596",
+    "data": [
+      {
+        "text": "potresti ",
+        "userDefined": false
+      },
+      {
+        "text": "pagarmi",
+        "alias": "payRequest",
+        "meta": "@payRequest",
+        "userDefined": true
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "andrea",
+        "alias": "payToSomeone",
+        "meta": "@payToSomeone",
+        "userDefined": true
+      },
+      {
+        "text": "?",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1526458086
+  },
+  {
+    "id": "ac67fabc-7f6b-492a-ba9a-8fac1e744b00",
+    "data": [
+      {
+        "text": "paga",
+        "alias": "payRequest",
+        "meta": "@payRequest",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "Alessio",
+        "alias": "payToSomeone",
+        "meta": "@payToSomeone",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "€",
+        "alias": "currency-name",
+        "meta": "@sys.currency-name",
+        "userDefined": false
+      },
+      {
+        "text": "100",
+        "alias": "number",
+        "meta": "@sys.number",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "3d0fb26d-710a-49bb-85ed-780453155b5e",
+    "data": [
+      {
+        "text": "Voglio ",
+        "userDefined": false
+      },
+      {
+        "text": "pagare",
+        "alias": "payRequest",
+        "meta": "@payRequest",
+        "userDefined": true
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "Antonio",
+        "alias": "payToSomeone",
+        "meta": "@payToSomeone",
+        "userDefined": true
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "100",
+        "alias": "number",
+        "meta": "@sys.number",
+        "userDefined": true
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "euro",
+        "alias": "currency-name",
+        "meta": "@sys.currency-name",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 5,
+    "updated": 1526458086
+  },
+  {
+    "id": "e609d5c3-f6ca-4402-9345-db4893a9e423",
+    "data": [
+      {
+        "text": "paga",
+        "alias": "payRequest",
+        "meta": "@payRequest",
+        "userDefined": true
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "Bottai",
+        "alias": "payToSomeone",
+        "meta": "@payToSomeone",
+        "userDefined": true
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "€",
+        "alias": "currency-name",
+        "meta": "@sys.currency-name",
+        "userDefined": false
+      },
+      {
+        "text": "200",
+        "alias": "number",
+        "meta": "@sys.number",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "6ee05fe0-3906-4e89-9425-6d871d0791d3",
+    "data": [
+      {
+        "text": "Voglio ",
+        "userDefined": false
+      },
+      {
+        "text": "pagare",
+        "alias": "payRequest",
+        "meta": "@payRequest",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 12,
+    "updated": 1526458086
+  },
+  {
+    "id": "05cef5b5-9c1a-4a68-8cec-104dd6a1ded0",
+    "data": [
+      {
+        "text": "voglio ",
+        "userDefined": false
+      },
+      {
+        "text": "pagare",
+        "alias": "payRequest",
+        "meta": "@payRequest",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "mario",
+        "alias": "payToSomeone",
+        "meta": "@payToSomeone",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "400",
+        "alias": "number",
+        "meta": "@sys.number",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1526458086
+  },
+  {
+    "id": "be2cffe0-5b89-472d-89cf-6fa7f9f90f43",
+    "data": [
+      {
+        "text": "Pagare",
+        "alias": "payRequest",
+        "meta": "@payRequest",
+        "userDefined": true
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "Antonio",
+        "alias": "payToSomeone",
+        "meta": "@payToSomeone",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 4,
+    "updated": 1526458086
+  },
+  {
+    "id": "aaff3076-7b0b-410e-a3d0-37f4a4742548",
+    "data": [
+      {
+        "text": "Paga",
+        "alias": "payRequest",
+        "meta": "@payRequest",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "mamma",
+        "alias": "payToSomeone",
+        "meta": "@payToSomeone",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "€",
+        "alias": "currency-name",
+        "meta": "@sys.currency-name",
+        "userDefined": false
+      },
+      {
+        "text": "13",
+        "alias": "number",
+        "meta": "@sys.number",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 0
+  },
+  {
+    "id": "20729087-02a9-458b-a0e4-7d4dc78a4abc",
+    "data": [
+      {
+        "text": "Voglio ",
+        "userDefined": false
+      },
+      {
+        "text": "pagare",
+        "alias": "payRequest",
+        "meta": "@payRequest",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "Carmelo",
+        "alias": "payToSomeone",
+        "meta": "@payToSomeone",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1526458086
+  },
+  {
+    "id": "6f674abe-d74d-46e7-b250-2ddd56b49ec6",
+    "data": [
+      {
+        "text": "vorrei ",
+        "userDefined": false
+      },
+      {
+        "text": "pagare",
+        "alias": "payRequest",
+        "meta": "@payRequest",
+        "userDefined": true
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "maria",
+        "alias": "payToSomeone",
+        "meta": "@payToSomeone",
+        "userDefined": true
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "300",
+        "alias": "number",
+        "meta": "@sys.number",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1526458086
+  },
+  {
+    "id": "be995a18-5f67-4273-b61b-1f91a17d4996",
+    "data": [
+      {
+        "text": "maria",
+        "alias": "payToSomeone",
+        "meta": "@payToSomeone",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 1,
+    "updated": 1526458086
+  },
+  {
+    "id": "70ba76a9-62ee-489f-a0bb-5f30d26d8d9f",
+    "data": [
+      {
+        "text": "no",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 1,
+    "updated": 1526458086
+  },
+  {
+    "id": "8b5bb5cb-c2a8-4d8b-a196-0dfface6b5f7",
+    "data": [
+      {
+        "text": "Pagare",
+        "alias": "payRequest",
+        "meta": "@payRequest",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "Antonio",
+        "alias": "payToSomeone",
+        "meta": "@payToSomeone",
+        "userDefined": true
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "100",
+        "alias": "number",
+        "meta": "@sys.number",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "euro",
+        "alias": "currency-name",
+        "meta": "@sys.currency-name",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 5,
+    "updated": 1526458086
+  },
+  {
+    "id": "56585167-e97e-4d30-8c27-7ca18bc51281",
+    "data": [
+      {
+        "text": "pagare",
+        "alias": "payRequest",
+        "meta": "@payRequest",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "maria",
+        "alias": "payToSomeone",
+        "meta": "@payToSomeone",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "200",
+        "alias": "number",
+        "meta": "@sys.number",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 1,
+    "updated": 1526458086
+  },
+  {
+    "id": "f2edfe1e-5c23-49ad-9cb0-cf23e5f9bcae",
+    "data": [
+      {
+        "text": "paga",
+        "alias": "payRequest",
+        "meta": "@payRequest",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "mario",
+        "alias": "payToSomeone",
+        "meta": "@payToSomeone",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "30",
+        "alias": "number",
+        "meta": "@sys.number",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1526458086
+  },
+  {
+    "id": "def33be9-b848-4798-b284-0b399fae2368",
+    "data": [
+      {
+        "text": "vorrei ",
+        "userDefined": false
+      },
+      {
+        "text": "pagare",
+        "alias": "payRequest",
+        "meta": "@payRequest",
+        "userDefined": true
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "mariagrazia",
+        "alias": "payToSomeone",
+        "meta": "@payToSomeone",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1526458086
+  },
+  {
+    "id": "04368859-3874-4e2f-b867-6e19bb5eac55",
+    "data": [
+      {
+        "text": "pagare",
+        "alias": "payRequest",
+        "meta": "@payRequest",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "maria",
+        "alias": "payToSomeone",
+        "meta": "@payToSomeone",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1526458086
+  },
+  {
+    "id": "96e9ac6a-73e9-4eaa-bd18-df810953ae93",
+    "data": [
+      {
+        "text": "100",
+        "alias": "number",
+        "meta": "@sys.number",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 2,
+    "updated": 1526458086
+  },
+  {
+    "id": "4ce25fd7-6ddf-4708-a62b-ee1c8f846895",
+    "data": [
+      {
+        "text": "Pagare",
+        "alias": "payRequest",
+        "meta": "@payRequest",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "Barbara",
+        "alias": "payToSomeone",
+        "meta": "@payToSomeone",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "100",
+        "alias": "number",
+        "meta": "@sys.number",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "euro",
+        "alias": "currency-name",
+        "meta": "@sys.currency-name",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 5,
+    "updated": 1526458086
+  },
+  {
+    "id": "f00fe572-42af-48b4-9462-02b49435f17e",
+    "data": [
+      {
+        "text": "pagare",
+        "alias": "payRequest",
+        "meta": "@payRequest",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "mariagraziella",
+        "alias": "payToSomeone",
+        "meta": "@payToSomeone",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1526458086
+  },
+  {
+    "id": "5548cd65-155d-4c20-88d4-d08b90f91596",
+    "data": [
+      {
+        "text": "voglio ",
+        "userDefined": false
+      },
+      {
+        "text": "pagare",
+        "alias": "payRequest",
+        "meta": "@payRequest",
+        "userDefined": false
+      },
+      {
+        "text": " ",
+        "userDefined": false
+      },
+      {
+        "text": "marione",
+        "alias": "payToSomeone",
+        "meta": "@payToSomeone",
+        "userDefined": false
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1526458086
+  },
+  {
+    "id": "d930488a-879a-4b09-bf04-2f282b4fa09d",
+    "data": [
+      {
+        "text": "900",
+        "alias": "number",
+        "meta": "@sys.number",
+        "userDefined": true
+      }
+    ],
+    "isTemplate": false,
+    "count": 0,
+    "updated": 1526458086
+  }
+]
