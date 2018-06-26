@@ -1,67 +1,74 @@
-## intent:bye
-- Bye
-- Goodbye
-- See you later
-- Bye bot
-- Goodbye friend
-- bye
-- bye for now
-- catch you later
-- gotta go
-- See you
-- goodnight
-- have a nice day
-- i'm off
-- see you later alligator
-- we'll speak soon
-
 ## intent:greet
-- Hi
-- Hey
-- Hi bot
-- Hey bot
-- Hello
-- Good morning
-- hi again
-- hi folks
-- hi Mister
-- hi pal!
-- hi there
-- greetings
-- hello everybody
-- hello is anybody there
-- hello robot
+- hey
+- hello
+- hi
+- hello there
+- good morning
+- good evening
+- moin
+- hey there
+- let's go
+- hey dude
+- goodmorning
+- goodevening
+- good afternoon
 
-## intent:thank
-- Thanks
-- Thank you
-- Thank you so much
-- Thanks bot
-- Thanks for that
-- cheers
-- cheers bro
-- ok thanks!
-- perfect thank you
-- thanks a bunch for everything
-- thanks for the help
-- thanks a lot
-- amazing, thanks
-- cool, thanks
-- cool thank you
+## intent:goodbye
+- cu
+- good by
+- cee you later
+- good night
+- good afternoon
+- bye
+- goodbye
+- have a nice day
+- see you around
+- bye bye
+- see you later
 
-## intent:deny
+## intent:mood_affirm
+- yes
+- indeed
+- of course
+- that sounds good
+- correct
+
+## intent:mood_deny
 - no
-- definitely not
 - never
-- absolutely not
-- i don't think so
-- i'm afraid not
-- no sir
-- no ma'am
+- I don't think so
+- don't like that
 - no way
-- no sorry
-- No, not really.
-- nah not for me
-- nah
-- no and no again
-- no go
+
+## intent:mood_great
+- perfect
+- very good
+- great
+- amazing
+- feeling like a king
+- wonderful
+- I am feeling very good
+- I am great
+- I am amazing
+- I am going to save the world
+- super
+- extremely good
+- so so perfect
+- so good
+- so perfect
+
+## intent:mood_unhappy
+- my day was horrible
+- I am sad
+- I don't feel very well
+- I am disappointed
+- super sad
+- I'm so sad
+- sad
+- very sad
+- unhappy
+- not so good
+- not very good
+- extremly sad
+- so saad
+- so sad

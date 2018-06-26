@@ -446,8 +446,10 @@ Eliminiamo quindi tutto il resto. Si presuppone che siano già stati installati 
 ```
 pip install rasa_nlu[spacy]
 pip install rasa_core
-python -m spacy download it  # ovviamente it sta per lingua italiana
+python -m spacy download en  
 ```
+(ovviamente è possibile scaricare e usare anche linguaggi: italiano, spagnolo, portoghese, etc.etc. che è possibile trovare [qui](https://spacy.io/models/)
+#### Definire il domain
 La prima cosa da fare è definire il Domain (domain.yml), che definisce l'universo in cui il nostro bot vivrà. Nel nostro caso sarà di questo tipo:
 ```
 intents:
@@ -490,6 +492,101 @@ templates:
 Ci sono diverse parti che compongono questo file di configurazione:
 1. **intents** è l'intento della frase in input, cioè quello che ci vuole comunicare effettivamente l'utente con la frase (vedi [RasaNLU](#rasanlu))
 2. **entities** sono le piccole parti di informazione che sono state estratte dal messaggio dell'utente (vedi [RasaNLU](#rasanlu))
-3. **actions**
-4. **slots**
-5. **templates**
+3. **actions** sono le possibili azioni che il bot può fare
+4. **slots** sono le informazioni da tracciare durante la conversazione
+5. **templates** sono i template che il bot usare per rispondere all'utente
+
+(gli **slots** e le **entities** non compaiono nell'esempio sopra)
+
+Rasa prende intent, entities e lo stato interno del dialogo per selezionare l'azione che deve essere eseguita successivamente. Se l'azione è solo dire qualcosa allo user allora Rasa guarderà se esiste un template definito nel domain che corrisponde a questa azione, una volta che la trova viene inviata all'utente di partenza.
+
+#### Definire l'interpreter
+
+L'interpreter è colui che esegue il parsing dei messaggi, in poche parole il NLU (natural language understanding). Trasforma frasi (messaggi dell'utente) in strutture descrittive della frase in input. Quello che useremo è ovviamente [RasaNLU](#rasanlu). Dato che nell'[esempio di rasanlu](#esempio-nlu) abbiamo usato un formato json per la definizione del set di dati, ora useremo un formato markdown. Inseriamo quindi nel file nlu_data.md il codice seguente:
+```
+## intent:greet
+- hey
+- hello
+- hi
+- hello there
+- good morning
+- good evening
+- moin
+- hey there
+- let's go
+- hey dude
+- goodmorning
+- goodevening
+- good afternoon
+
+## intent:goodbye
+- cu
+- good by
+- cee you later
+- good night
+- good afternoon
+- bye
+- goodbye
+- have a nice day
+- see you around
+- bye bye
+- see you later
+
+## intent:mood_affirm
+- yes
+- indeed
+- of course
+- that sounds good
+- correct
+
+## intent:mood_deny
+- no
+- never
+- I don't think so
+- don't like that
+- no way
+
+## intent:mood_great
+- perfect
+- very good
+- great
+- amazing
+- feeling like a king
+- wonderful
+- I am feeling very good
+- I am great
+- I am amazing
+- I am going to save the world
+- super
+- extremely good
+- so so perfect
+- so good
+- so perfect
+
+## intent:mood_unhappy
+- my day was horrible
+- I am sad
+- I don't feel very well
+- I am disappointed
+- super sad
+- I'm so sad
+- sad
+- very sad
+- unhappy
+- not so good
+- not very good
+- extremly sad
+- so saad
+- so sad
+```
+Manca ora definire la configurazione di rasa nlu, andiamo quindi a impostare il file nlu_config.yml come segue:
+```
+language: "en"
+
+pipeline: "spacy_sklearn"
+```
+Possiamo quindi fare ora il train del nostro modello, eseguendo questi script python:
+```
+python -m rasa_nlu.train -c nlu_config.yml --data data/nlu_data.md -o models --fixed_model_name nlu --project current --verbose
+```
+Verrà creata una cartella *models/current/nlu* in cui sarà contenuto il modello creato.
