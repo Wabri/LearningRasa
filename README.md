@@ -16,7 +16,8 @@
 1. [Introduzione](#introduzione-core)
 2. [Framework](#introduzione-al-framework-rasa_core)
 3. [Installazione](#installazione-core)
-4. [Primo esempio](#primo-semplice-bot)
+4. [Primo esempio](#primo-semplice-bot) : [Domain](#definire-domain), [Interpreter](#definire-interpreter), [Stories](#definire-stories)
+5.
 ----------------------
 # RasaNLU
 
@@ -58,7 +59,7 @@ Mancano le librerie dei linguaggi naturali per poter effettivamente fare il NLU:
 $ python -m spacy download it
 $ python -m spacy link it_core_news_sm it
 ```
-*** (teoricamente crea già il link direttamente con il primo comando ma nel caso esplicitare il collegamento con il secondo comando) ***
+***(teoricamente crea già il link direttamente con il primo comando ma nel caso esplicitare il collegamento con il secondo comando)***
 
 ## Esempio nlu
 A questo punto possiamo fare un esempio: creare un bot per la ricerca di ristoranti.
@@ -449,7 +450,7 @@ pip install rasa_core
 python -m spacy download en  
 ```
 (ovviamente è possibile scaricare e usare anche linguaggi: italiano, spagnolo, portoghese, etc.etc. che è possibile trovare [qui](https://spacy.io/models/)
-#### Definire il domain
+#### Definire Domain
 La prima cosa da fare è definire il Domain (domain.yml), che definisce l'universo in cui il nostro bot vivrà. Nel nostro caso sarà di questo tipo:
 ```
 intents:
@@ -500,7 +501,7 @@ Ci sono diverse parti che compongono questo file di configurazione:
 
 Rasa prende intent, entities e lo stato interno del dialogo per selezionare l'azione che deve essere eseguita successivamente. Se l'azione è solo dire qualcosa allo user allora Rasa guarderà se esiste un template definito nel domain che corrisponde a questa azione, una volta che la trova viene inviata all'utente di partenza.
 
-#### Definire l'interpreter
+#### Definire Interpreter
 
 L'interpreter è colui che esegue il parsing dei messaggi, in poche parole il NLU (natural language understanding). Trasforma frasi (messaggi dell'utente) in strutture descrittive della frase in input. Quello che useremo è ovviamente [RasaNLU](#rasanlu). Dato che nell'[esempio di rasanlu](#esempio-nlu) abbiamo usato un formato json per la definizione del set di dati, ora useremo un formato markdown. Inseriamo quindi nel file nlu_data.md il codice seguente:
 ```
@@ -590,3 +591,9 @@ Possiamo quindi fare ora il train del nostro modello, eseguendo questi script py
 python -m rasa_nlu.train -c nlu_config.yml --data data/nlu_data.md -o models --fixed_model_name nlu --project current --verbose
 ```
 Verrà creata una cartella *models/current/nlu* in cui sarà contenuto il modello creato.
+
+#### Definire Stories
+
+La parte fondamentale per il core del nostro bot è definire le storie per insegnare al nostro bot cosa deve fare e a quale punto del dialogo. Una **Story** è un dato molto semplice per il training utile per il sistema di gestione della discussione.
+
+<!-- https://core.rasa.com/tutorial_basics.html#define-stories -->
