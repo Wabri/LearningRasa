@@ -1,4 +1,4 @@
-# LearningRasaNLU - Appunti e esempi
+# RasaNLU - Appunti e esempi
 
 ## Introduzione
 Rasa_NLU è uno strumento per fare il [natural language understanding (NLU)](https://en.wikipedia.org/wiki/Natural_language_understanding).
@@ -357,3 +357,46 @@ Possiamo valutare le performance di riconoscimento degli intenti e delle entità
 $ python -m rasa_nlu.evaluate --data path_to_data --model path_to_model
 ```
 In cui **model** specifica il modello da valutare specificando i data test con data. Questo genererà delle misure di log precision, recall, e f1 per ogni intento e le riassumerà tutte insieme.
+
+
+# RasaCore - Appunti e esempi
+
+## Introduzione
+
+Rasa Core è un web service che permette in base a un input (intenti e entità nel nostro caso) di rispondere con delle azioni prefissate. nel nostro caso l'input che gli forniremo è il risultato del parsing di una frase da parte di rasa nlu.
+Per poter instaurare una conversazione con un utente è necessario l'utilizzo di una macchina a stati. Questo permetterà di mantenere i dati via via che il flow della conversazione continuerà. Per esempio un utente vuole effettuare un pagamento, rasa quindi collezionerà i dati via via che l'utente li fornisce e quando avrà completato il form di pagamento passerà ad un nuovo stato cioè quello di pagamento effettuato o del controllo della transazione.
+Solitamente un bot semplice ha dai 5 ai 10 stati e un centinaio o migliaio di regole per gestire il suo comportamento.
+Il codice di rasa core non è formato da una cascata di if else ma usa un modello di predizione probabilistica in base alla scelta del modello che sceglierà l'azione da prendere, l'intelligenza del bot può essere trainata in molti modi. Un approccio di questo tipo porta a vantaggi come: debugging è più semplice, bot più flessibile, il bot migliora la sua esperienza senza scrivere altro codice, è possibile aggiungere funzionalità senza andare a debuggare migliaia di regole precedentemente definite.
+
+## Introduzione al framework rasa_core
+
+python è senza dubbio il linguaggio più usato per il machine learning grazie alla grande quantità di framework sviluppati per questi scopi. Ovviamente la maggior parte dei bot di questo tipo sono scritti in javascript e molte delle altre strutture usate sono invece create e rilasciate in java, c#, etc.etc. Dato che Rasa Core è un framework, non è semplice integrarlo all'interno di un REST API facilmente come Rasa NLU.
+Per creare un bot con RasaCore è necessario:
+- definire un dominio
+- scrivere o collezionare storie
+- eseguire uno script python per fare train e eseguire il bot
+
+Per poterlo usare l'unica cosa necessaria da scrivere in python è lo script dove vengono indicate le azioni persoalizzate. Una libreria che può essere di aiuto è [Request: HTTP for Humans](http://docs.python-requests.org/en/master/) che rende la programmazione HTTP molto più semplice. Se Rasa necessita di interagire con altri servizi proprietari tramite HTTP, un'azione comune potrebbe essere di questo tipo:
+```
+from rasa_core.action import Action
+import requests
+
+class ApiAction(Action):
+  def name(self):
+    return "my_api_action"
+
+  def run (self, dispatcher, tracker, domain):
+    data = requests.get(url).json
+    return [SlotSet("api_result", data)]
+```
+<!-- manca da fare https://core.rasa.com/no_python.html#rasa-core-with-docker -->
+
+## Installazione
+
+l'installazione raccomandata è usando il gestore di pacchetti python pip:
+```
+  pip install rasa_core
+```
+(è consigliato anche l'uso e installazione di [Anaconda](https://www.anaconda.com/what-is-anaconda/))
+
+## Primo semplice bot
