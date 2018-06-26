@@ -1,11 +1,26 @@
 # Rasa - Appunti e esempi
-[RasaNLU](#RasaNLU)
-1. [Introduzione](##Introduzione)
-2. [Installazione](##Installazione)
+--------------------
+## Indice
+[RasaNLU](#rasanlu)
+1. [Introduzione](#introduzione-nlu)
+2. [Installazione](#installazione-nlu)
+3. [Esempio](#esempio-nlu)
+4. [Training](#training-nlu)
+5. [Backend](#backend-nlu)
+6. [Esportare Dialogflow](#esportare-data-da-dialogflow)
+7. [Training Data](#struttura-del-training-data)
+8. [Server ed Emulazione](#server-ed-emulazione)
+9. [Valutare Modello](#evaluate-model)
+
+[RasaCore](#rasacore)
+1. [Introduzione](#introduzione-Core)
+2. [Framework](#introduzione-al-framework-rasa_core)
+3. [Installazione](#installazione-core)
+4. [Primo esempio](#primo-semplice-bot)
 ----------------------
 # RasaNLU
 
-## Introduzione
+## Introduzione nlu
 Rasa_NLU è uno strumento per fare il [natural language understanding (NLU)](https://en.wikipedia.org/wiki/Natural_language_understanding).
 
 Questo è un open source tool che permette la classificazione degli intenti e l'estrazione delle entità usate negli intenti.
@@ -26,7 +41,7 @@ Quindi gli intent non sono altro che lo scopo della frase, mentre le entities so
 Questo strumento quindi serve per processare i messaggi. Infatti c'è un componente per la classificazione dell'intento e diversi componenti invece
 per il riconoscimento delle entità.
 
-## Intallazione
+## Intallazione nlu
 Per installare questo strumento è necessario python e pip:
 ```
 $ pip install rasa_nlu
@@ -45,7 +60,7 @@ $ python -m spacy link it_core_news_sm it
 ```
 *** (teoricamente crea già il link direttamente con il primo comando ma nel caso esplicitare il collegamento con il secondo comando) ***
 
-## Esempio
+## Esempio nlu
 A questo punto possiamo fare un esempio: creare un bot per la ricerca di ristoranti.
 
 Definiamo quindi 3 tipologie di intenti:
@@ -69,7 +84,7 @@ Subito dopo deve riconoscere ed etichettare delle parole chiave definendo delle 
 1. "nord" che rappresenta una posizione,
 2. "messicano" che rappresenta il tipo di cucina.
 
-## Training
+## Training nlu
 Per poter fare tutto ciò è necessario allenare l'intelligenza. Il training è fondamentale, più dati abbiamo e più intellingente sarà la nostra intelligenza. Nel caso precedente abbiamo preso la frase ** "sono a nord della città e voglio mangiare messicano"** per far comprendere questa frase all'ai dobbiamo trascriverla sotto forma di file json in questo modo:
 ```
 {
@@ -112,7 +127,7 @@ $ rasa-nlu-trainer
 Che aprirà una pagina web ospitata in localhost in cui si troveranno tutti i
 train attuali dell'intelligenza.
 
-## Backend
+## Backend nlu
 Andiamo ora a definire la configurazione del backend dell'intelligenza. Creiamo quindi il file ** config_spacy.yml ** nella cartella di lavoro con il seguente
 codice:
 ```
@@ -365,9 +380,9 @@ In cui **model** specifica il modello da valutare specificando i data test con d
 
 --------------------------
 
-# RasaCore - Appunti e esempi
+# RasaCore
 
-## Introduzione
+## Introduzione core
 
 Rasa Core è un web service che permette in base a un input (intenti e entità nel nostro caso) di rispondere con delle azioni prefissate. nel nostro caso l'input che gli forniremo è il risultato del parsing di una frase da parte di rasa nlu.
 Per poter instaurare una conversazione con un utente è necessario l'utilizzo di una macchina a stati. Questo permetterà di mantenere i dati via via che il flow della conversazione continuerà. Per esempio un utente vuole effettuare un pagamento, rasa quindi collezionerà i dati via via che l'utente li fornisce e quando avrà completato il form di pagamento passerà ad un nuovo stato cioè quello di pagamento effettuato o del controllo della transazione.
@@ -397,7 +412,7 @@ class ApiAction(Action):
 ```
 <!-- manca da fare https://core.rasa.com/no_python.html#rasa-core-with-docker -->
 
-## Installazione
+## Installazione core
 
 l'installazione raccomandata è usando il gestore di pacchetti python pip:
 ```
