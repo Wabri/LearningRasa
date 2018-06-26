@@ -7,13 +7,13 @@
 3. [Esempio](#esempio-nlu)
 4. [Training](#training-nlu)
 5. [Backend](#backend-nlu)
-6. [Esportare Dialogflow](#esportare-data-da-dialogflow)
+6. [Esportare Dialogflow](#esportare-dati-da-dialogflow)
 7. [Training Data](#struttura-del-training-data)
 8. [Server ed Emulazione](#server-ed-emulazione)
 9. [Valutare Modello](#evaluate-model)
 
 [RasaCore](#rasacore)
-1. [Introduzione](#introduzione-Core)
+1. [Introduzione](#introduzione-core)
 2. [Framework](#introduzione-al-framework-rasa_core)
 3. [Installazione](#installazione-core)
 4. [Primo esempio](#primo-semplice-bot)
@@ -41,7 +41,7 @@ Quindi gli intent non sono altro che lo scopo della frase, mentre le entities so
 Questo strumento quindi serve per processare i messaggi. Infatti c'è un componente per la classificazione dell'intento e diversi componenti invece
 per il riconoscimento delle entità.
 
-## Intallazione nlu
+## Installazione nlu
 Per installare questo strumento è necessario python e pip:
 ```
 $ pip install rasa_nlu
@@ -410,7 +410,7 @@ class ApiAction(Action):
     data = requests.get(url).json
     return [SlotSet("api_result", data)]
 ```
-<!-- manca da fare https://core.rasa.com/no_python.html#rasa-core-with-docker -->
+<!-- manca da fare (per fatica) https://core.rasa.com/no_python.html#rasa-core-with-docker -->
 
 ## Installazione core
 
@@ -421,3 +421,75 @@ l'installazione raccomandata è usando il gestore di pacchetti python pip:
 (è consigliato anche l'uso e installazione di [Anaconda](https://www.anaconda.com/what-is-anaconda/))
 
 ## Primo semplice bot
+Prima di iniziare con l'esempio, diamo una spiegazione di come i fili si collegano a partire da quando arriva il messaggio a quando viene restituito in output:
+0. **Message In** messaggio di input
+1. **Interpreter** converte il messaggio input in un dizionario che include il testo original, l'intento e le entità trovate
+2. **Tracker** è l'oggetto che mantiene traccia dello stato della conversazione, riceve le informazioni che arrivano dai nuovi messaggi
+3. **Policy** riceve lo stato attuale del tracker e sceglie qual'è l'azione da fare
+4. **Action** questo passaggio deve: mandare il log al tracker e generare il messaggio di uscita
+5. **Message Out** messaggio spedito allo user, è effettivamente la risposta del bot
+
+a questo punto è possibile iniziare l'esempio: creare un bot che controlla il nostro mood e cerca di tirarci su se siamo infelici. Possiamo usare lo [starter pack](https://github.com/RasaHQ/starter-pack) fornito da rasa per aiutarci nel nostro primo esempio, andiamo quindi a clonare la repository in locale con il comando:
+```
+  git clone https://github.com/RasaHQ/starter-pack.git
+```
+I file importanti per i nostri attuali scopi sono:
+```
+starter-pack/
+├── data/
+│   ├── stories.md            # set di conversazioni per il training
+│   └── nlu_data.md           # set di training per il nlu
+├── domain.yml                # configurazione del dominio
+└── nlu_config.yml            # configurazione del nlu
+```
+Eliminiamo quindi tutto il resto. Si presuppone che siano già stati installati i componenti necessari come: rasa_core, rasa_nlue e spacy. Nel caso installarli con i seguenti comandi:
+```
+pip install rasa_nlu[spacy]
+pip install rasa_core
+python -m spacy download it  # ovviamente it sta per lingua italiana
+```
+La prima cosa da fare è definire il Domain (domain.yml), che definisce l'universo in cui il nostro bot vivrà. Nel nostro caso sarà di questo tipo:
+```
+intents:
+  - greet
+  - goodbye
+  - mood_affirm
+  - mood_deny
+  - mood_great
+  - mood_unhappy
+
+actions:
+- utter_greet
+- utter_cheer_up
+- utter_did_that_help
+- utter_happy
+- utter_goodbye
+
+templates:
+  utter_greet:
+  - text: "Hey! How are you?"
+    buttons:
+    - title: "great"
+      payload: "great"
+    - title: "super sad"
+      payload: "super sad"
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great carry on!"
+
+  utter_goodbye:
+  - text: "Bye"
+```
+Ci sono diverse parti che compongono questo file di configurazione:
+1. **intents** è l'intento della frase in input, cioè quello che ci vuole comunicare effettivamente l'utente con la frase (vedi [RasaNLU](#rasanlu))
+2. **entities** sono le piccole parti di informazione che sono state estratte dal messaggio dell'utente (vedi [RasaNLU](#rasanlu))
+3. **actions**
+4. **slots**
+5. **templates**
