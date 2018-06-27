@@ -16,8 +16,8 @@
 1. [Introduzione](#introduzione-core)
 2. [Framework](#introduzione-al-framework-rasa_core)
 3. [Installazione](#installazione-core)
-4. [Primo esempio](#primo-semplice-bot) : [Domain](#definire-domain), [Interpreter](#definire-interpreter), [Stories](#definire-stories)
-5.
+4. [Primo esempio](#primo-semplice-bot) : [Domain](#definire-domain), [Interpreter](#definire-interpreter), [Stories](#definire-stories), [Training&Run](#training-and-run)
+5. [Training Supervisionato](#training_supervisionato)
 ----------------------
 # RasaNLU
 
@@ -594,6 +594,52 @@ Verrà creata una cartella *models/current/nlu* in cui sarà contenuto il modell
 
 #### Definire Stories
 
-La parte fondamentale per il core del nostro bot è definire le storie per insegnare al nostro bot cosa deve fare e a quale punto del dialogo. Una **Story** è un dato molto semplice per il training utile per il sistema di gestione della discussione.
+La parte fondamentale per il core del nostro bot è definire le storie per insegnare al nostro bot cosa deve fare e a quale punto del dialogo. Una **Story** è un dato molto semplice per il training, utile per il sistema di gestione della discussione. Andremo a definire alcune storie nel nostro esempio modificando il file data/stories.md:
+```
+## happy path               <!-- name of the story - just for debugging -->
+* greet              
+  - utter_greet
+* mood_great               <!-- user utterance, in format _intent[entities] -->
+  - utter_happy
 
-<!-- https://core.rasa.com/tutorial_basics.html#define-stories -->
+## sad path 1               <!-- this is already the start of the next story -->
+* greet
+  - utter_greet             <!-- action of the bot to execute -->
+* mood_unhappy
+  - utter_cheer_up
+  - utter_did_that_help
+* mood_affirm
+  - utter_happy
+
+## sad path 2
+* greet
+  - utter_greet
+* mood_unhappy
+  - utter_cheer_up
+  - utter_did_that_help
+* mood_deny
+  - utter_goodbye
+
+## say goodbye
+* goodbye
+  - utter_goodbye
+```
+Noteremo che ci sono alcuni identificatori come:
+* `##` che definisce l'inizio di una storia, la stringa successiva anche se non richiesta è consigliata ed è la descrizione breve della story sotto definita (utile in fase di un possibile debug)
+* `*` indica l'intento dell'utente nella frase che ci ha inviato
+* `-` è la risposta che deve dare il bot in questo caso, le risposte sono predefinite nel file domain.yml
+* `newline` è la fine della storia
+
+#### Training and Run
+
+A questo punto abbiamo tutto quello che ci serve per generare un modello, che è possibile crearlo con il solito comando:
+```
+  python -m rasa_core.train -d domain.yml -s data/stories.md -o models/current/dialogue --epochs 200
+```
+Le **epochs** non sono altro che il numero di volte che l'algoritmo passerà attraverso tutti i training di esempio (che in questo caso sono proprio le **stories** create precedentemente).
+
+Per usare sia il modello per nlu e il modello di core, andremo ad eseguire il comando:
+```
+  python -m rasa_core.run -d models/current/dialogue -u models/current/nlu
+```
+Questo ci permetterà di usare finalmente il nostro bot (per ora solo a linea di comando).
