@@ -1,5 +1,6 @@
 # Rasa - Appunti e esempi
 --------------------
+
 ## Indice
 [RasaNLU](#rasanlu)
 1. [Introduzione](#introduzione-nlu)
@@ -17,7 +18,8 @@
 2. [Framework](#introduzione-al-framework-rasa_core)
 3. [Installazione](#installazione-core)
 4. [Primo esempio](#primo-semplice-bot) : [Domain](#definire-domain), [Interpreter](#definire-interpreter), [Stories](#definire-stories), [Training&Run](#training-and-run)
-5. [Training Supervisionato](#training_supervisionato)
+5. [Secondo esempio](#training_supervisionato)
+
 ----------------------
 # RasaNLU
 
@@ -643,3 +645,15 @@ Per usare sia il modello per nlu e il modello di core, andremo ad eseguire il co
   python -m rasa_core.run -d models/current/dialogue -u models/current/nlu
 ```
 Questo ci permetterà di usare finalmente il nostro bot (per ora solo a linea di comando).
+
+## Training supervisionato
+
+Come secondo esempio andremo a definire un nuovo esempio un po' più complesso, un bot di ricerca ristoranti (vedi [Esempio Rasa_nlu](#esempio-nlu)). Quando l'utente farà una richiesta del tipo "voglio andare a mangiare messicano!" il bot dovrà essere capace di andare a chiedere altre informazioni e dettagli per suggerire il ristorante giusto (almeno la posizione di dove si vuole ricercare il ristorante).
+
+*(L'esercizio relativo è possibile trovarlo [qui](example_core/second))*
+
+Per prima cosa andiamo a creare il dominio del core che per completezza chiameremo **restaurant_domain.yml**.
+
+*(In questo esempio userò la lingua italiana, installare quindi il pacchetto it con spacy. vedi [installazione](#installazione-nlu))*
+
+Prima di andare a implementare il domain del nlu ricordiamo la differenza tra **slots** e **entities**
