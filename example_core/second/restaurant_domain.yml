@@ -1,0 +1,55 @@
+slots:
+  cucina:
+      type: text
+  posizione:
+      type: text
+  prezzo:
+      type: text
+  matches:
+      type: unfeaturized
+
+entities:
+  - posizione
+  - prezzo
+  - cucina
+
+intents:
+  - saluto
+  - conferma
+  - negazione
+  - informazione
+  - ringraziamento
+  - richiesta_informazioni
+
+templates:
+  utter_saluto:
+    - "Salve!"
+    - "Ciao!"
+  utter_arrivederci:
+    - "Addio!"
+    - "Ciao ciao, alla prossima"
+  utter_default:
+    - "Sono un bot di ricerca ristoranti!"
+  utter_ricerca:
+    - "Aspetta, fammi vedere cosa trovo..."
+  utter_trova_alternative:
+    - "Fammi cercare se ci sono alternative..."
+  utter_cucina:
+    - "Che tipo cucina stavi cercando?"
+  utter_richiesta_aiuto:
+    - "Come posso aiutare?"
+  utter_posizione:
+    - "Dove?"
+  utter_prezzo:
+    - "Come deve essere il prezzo del ristorante?"
+
+actions:
+  - utter_saluto
+  - utter_arrivederci
+  - utter_default
+  - utter_ricerca
+  - utter_trova_alternative
+  - utter_cucina
+  - utter_richiesta_aiuto
+  - utter_posizione
+  - utter_prezzo

@@ -29,8 +29,8 @@ Rasa_NLU è uno strumento per fare il [natural language understanding (NLU)](htt
 Questo è un open source tool che permette la classificazione degli intenti e l'estrazione delle entità usate negli intenti.
 
 Prendiamo per esempio la frase:
-** "Sto cercando un ristorante messicano in centro" **, il risultato che otterremo è un json di questo tipo:
-```
+**"Sto cercando un ristorante messicano in centro"**, il risultato che otterremo è un json di questo tipo:
+```Json
 {
   "intent": "ricerca_ristorante",
   "entities": {
@@ -89,7 +89,7 @@ Subito dopo deve riconoscere ed etichettare delle parole chiave definendo delle 
 
 ## Training nlu
 Per poter fare tutto ciò è necessario allenare l'intelligenza. Il training è fondamentale, più dati abbiamo e più intellingente sarà la nostra intelligenza. Nel caso precedente abbiamo preso la frase ** "sono a nord della città e voglio mangiare messicano"** per far comprendere questa frase all'ai dobbiamo trascriverla sotto forma di file json in questo modo:
-```
+```Json
 {
   "text":"sono a nord della città e voglio mangiare messicano",
   "intent":"ricercaRistorante",
@@ -109,7 +109,7 @@ Per poter fare tutto ciò è necessario allenare l'intelligenza. Il training è 
 }
 ```
 questo è l'unico modo in cui l'intelligenza artificiale comprenderà la frase. Possiamo fare un altro esempio più semplice con la frase **"ciao"**:
-```
+```Json
 {
   "text":"ciao",
   "intent":"saluto",
@@ -133,7 +133,7 @@ train attuali dell'intelligenza.
 ## Backend nlu
 Andiamo ora a definire la configurazione del backend dell'intelligenza. Creiamo quindi il file ** config_spacy.yml ** nella cartella di lavoro con il seguente
 codice:
-```
+```yaml
 language: "it"
 
 pipeline: "spacy_sklearn"
@@ -153,7 +153,7 @@ $ python -m rasa_nlu.server --path projects
 ```
 Che andrà a prendere il modello default nella cartella projects e userà la porta 5000 sul local host. Mantenendo il server attivo eseguendo una chiamata get all'indirizzo [localhost:5000/parse?q=ciao](http://localhost:5000/parse?q=ciao) dovremmo
 ricevere in output un file json con le informazioni del parsing fatto:
-```
+```Json
 {
   "intent": {
       "name": "saluto",
@@ -204,7 +204,7 @@ Questo creerà un modello come prima, ma dato che ci sono molti più dati, avrem
 $ python -m rasa_nlu.server --path projectsDialogflow
 ```
 Eseguendo una richiesta ***"pagare mario 100 euro"*** avremo un output di questo tipo:
-```
+```Json
 {
   "intent": {
     "name": "payRequest",
@@ -279,7 +279,7 @@ Il training data per Rasa nlu è strutturato in parti differenti:
   3. regex_features.
 
 Corrispondente al file json:
-```
+```Json
 {
   "rasa_nlu_data" : {
     "common_examples":[],
@@ -304,7 +304,7 @@ I **common_examples** hanno 3 componenti:
 I primi 2 sono stringhe mentre l'ultimo è un array.
 
 La parte di **entity_synonyms** è la parte in cui vengono indicati i sinonimi che è possibile trovare in una frase. per esempio la parola *"pagare"* nel nostro caso ha lo stesso significato di *"paga"* dato che la raggruppiamo nello stesso gruppo di entità ***payRequest***. Un altro esempio generico può essere *"New York"* e *"NY"* entrambi hanno lo stesso significato corrispondente all'entità luogo. Indicando i vari sinonimi rasa non differenzierà tra le due parole e gli assegnerà un unico valore che sarà il solito:
-```
+```Json
 {
   "rasa_nlu_data": {
     "entity_synonyms": [
@@ -317,7 +317,7 @@ La parte di **entity_synonyms** è la parte in cui vengono indicati i sinonimi c
 }
 ```
 Le **regex_features** non sono altro che le *regular expression* che possono essere usate come supporto alla classificazione degli intenti e delle entità. Per esempio un codice postale (chiamato anche *zipcode*) è sempre formato da 5 numeri compresi tra 0 e 9, che possiamo rappresentare nella nostra configurazione come:
-```
+```Json
 {
     "rasa_nlu_data": {
         "regex_features": [
@@ -401,7 +401,7 @@ Per creare un bot con RasaCore è necessario:
 - eseguire uno script python per fare train e eseguire il bot
 
 Per poterlo usare l'unica cosa necessaria da scrivere in python è lo script dove vengono indicate le azioni persoalizzate. Una libreria che può essere di aiuto è [Request: HTTP for Humans](http://docs.python-requests.org/en/master/) che rende la programmazione HTTP molto più semplice. Se Rasa necessita di interagire con altri servizi proprietari tramite HTTP, un'azione comune potrebbe essere di questo tipo:
-```
+```python
 from rasa_core.action import Action
 import requests
 
@@ -454,7 +454,7 @@ python -m spacy download en
 (ovviamente è possibile scaricare e usare anche linguaggi: italiano, spagnolo, portoghese, etc.etc. che è possibile trovare [qui](https://spacy.io/models/)
 #### Definire Domain
 La prima cosa da fare è definire il Domain (domain.yml), che definisce l'universo in cui il nostro bot vivrà. Nel nostro caso sarà di questo tipo:
-```
+```yaml
 intents:
   - greet
   - goodbye
@@ -506,7 +506,7 @@ Rasa prende intent, entities e lo stato interno del dialogo per selezionare l'az
 #### Definire Interpreter
 
 L'interpreter è colui che esegue il parsing dei messaggi, in poche parole il NLU (natural language understanding). Trasforma frasi (messaggi dell'utente) in strutture descrittive della frase in input. Quello che useremo è ovviamente [RasaNLU](#rasanlu). Dato che nell'[esempio di rasanlu](#esempio-nlu) abbiamo usato un formato json per la definizione del set di dati, ora useremo un formato markdown. Inseriamo quindi nel file nlu_data.md il codice seguente:
-```
+```Markdown
 ## intent:greet
 - hey
 - hello
@@ -597,7 +597,7 @@ Verrà creata una cartella *models/current/nlu* in cui sarà contenuto il modell
 #### Definire Stories
 
 La parte fondamentale per il core del nostro bot è definire le storie per insegnare al nostro bot cosa deve fare e a quale punto del dialogo. Una **Story** è un dato molto semplice per il training, utile per il sistema di gestione della discussione. Andremo a definire alcune storie nel nostro esempio modificando il file data/stories.md:
-```
+```Markdown
 ## happy path               <!-- name of the story - just for debugging -->
 * greet              
   - utter_greet
@@ -648,7 +648,7 @@ Questo ci permetterà di usare finalmente il nostro bot (per ora solo a linea di
 
 ## Training supervisionato
 
-Come secondo esempio andremo a definire un nuovo esempio un po' più complesso, un bot di ricerca ristoranti (vedi [Esempio Rasa_nlu](#esempio-nlu)). Quando l'utente farà una richiesta del tipo "voglio andare a mangiare messicano!" il bot dovrà essere capace di andare a chiedere altre informazioni e dettagli per suggerire il ristorante giusto (almeno la posizione di dove si vuole ricercare il ristorante).
+Come secondo esempio andremo a definire un nuovo esempio un po' più complesso, un bot di ricerca ristoranti (vedi [Esempio Rasa_nlu](#esempio-nlu)). Quando l'utente farà una richiesta del tipo **"Voglio andare a mangiare messicano!"** il bot dovrà essere capace di andare a chiedere altre informazioni e dettagli per suggerire il ristorante giusto (almeno la posizione di dove si vuole ricercare il ristorante).
 
 *(L'esercizio relativo è possibile trovarlo [qui](example_core/second))*
 
@@ -656,4 +656,93 @@ Per prima cosa andiamo a creare il dominio del core che per completezza chiamere
 
 *(In questo esempio userò la lingua italiana, installare quindi il pacchetto it con spacy. vedi [installazione](#installazione-nlu))*
 
-Prima di andare a implementare il domain del nlu ricordiamo la differenza tra **slots** e **entities**
+Prima di andare a implementare il domain del nlu ricordiamo la differenza tra **slots** e **entities**, dato le definizioni sembrano simile meglio specificare. La prima serve per salvarsi nel tempo le informazioni della discussione, mentre la seconda sono le informazioni trovate nella frase che l'utente invia al bot. Nell'esempio di prima la discussione inizia con **"Voglio andare a mangiare messicano!"** in cui sarà catturata l'entità *messicano* che corrisponderà per esempio al tipo di cucina che sarà copiata incollata nello slot di riferimento, per consigliare un posto dove mangiare servono più informazioni per esempio il posto quindi il bot risponderà **"In che zona della città?"** a questo punto l'utente risponderà qualcosa del tipo **"in centro"** dove verrà presa l'entità centro che corrisponderà al posto in cui il bot dovrà cercare il ristorante e come prima questa informazione verrà copiata incollata nello slot corrispondente. In termini di programmazione possiamo dire che gli **slots** sono informazioni globali che vengono salvate fintanto che l'oggetto non viene distrutto (in questo caso il nostro oggetto è la discussione che quando finirà gli slots verranno liberati), mentre le **entities** sono le variabili locali al metodo di parsing della frase e una volta richiamato il metodo tali variabili vengono inizializzate nuovamente. Spero di essermi spiegato... Inoltre gli slots non solo possono essere inizializzati con valori provenienti dalle entità, ma anche da risultati di chiamate esterne.
+
+Possiamo ora andare a scrivere il domain del core:
+```yaml
+slots:
+  cucina:
+      type: text
+  posizione:
+      type: text
+  prezzo:
+      type: text
+  matches:
+      type: unfeaturized
+
+entities:
+  - posizione
+  - prezzo
+  - cucina
+
+intents:
+  - saluto
+  - conferma
+  - negazione
+  - informazione
+  - ringraziamento
+  - richiesta_informazioni
+
+templates:
+  utter_saluto:
+    - "Salve!"
+    - "Ciao!"
+  utter_arrivederci:
+    - "Addio!"
+    - "Ciao ciao, alla prossima"
+  utter_default:
+    - "Sono un bot di ricerca ristoranti!"
+  utter_ricerca:
+    - "Aspetta, fammi vedere cosa trovo..."
+  utter_trova_alternative:
+    - "Fammi cercare se ci sono alternative..."
+  utter_cucina:
+    - "Che tipo cucina stavi cercando?"
+  utter_richiesta_aiuto:
+    - "Come posso aiutare?"
+  utter_posizione:
+    - "Dove?"
+  utter_prezzo:
+    - "Come deve essere il prezzo del ristorante?"
+
+actions:
+  - utter_saluto
+  - utter_arrivederci
+  - utter_default
+  - utter_ricerca
+  - utter_trova_alternative
+  - utter_cucina
+  - utter_richiesta_aiuto
+  - utter_posizione
+  - utter_prezzo
+```
+
+Possiamo definire anche delle azioni personalizzate in cui possiamo definire delle risposte che non siano solo semplice testo, ma anche l'invio di una chiamata rest o l'esecuzione di un programma. Questo possiamo farlo creando uno script python che implementi la classe di risposta del bot, per esempio possiamo creare lo script bot.py in cui inserire:
+```python
+class ActionSearchRestaurants(Action):
+    def name(self):
+        return 'action_ricerca_ristoranti'
+
+    def run(self, dispatcher, tracker, domain):
+        dispatcher.utter_message("Loocking for restaurants")
+        restaurant_api = RestaurantAPI()
+        restaurants = restaurant_api.search(tracker.get_slot("cucina"))
+        return [SlotSet("matches", restaurants)]
+```
+Possiamo aggiungere anche questa azione al file di domain del core:
+```yaml
+.
+.
+.
+actions:
+  - utter_saluto
+  - utter_arrivederci
+  - utter_default
+  - utter_ricerca
+  - utter_trova_alternative
+  - utter_cucina
+  - utter_richiesta_aiuto
+  - utter_posizione
+  - utter_prezzo
+  - bot.ActionSearchRestaurants
+```
