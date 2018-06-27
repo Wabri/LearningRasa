@@ -746,3 +746,45 @@ actions:
   - utter_prezzo
   - bot.ActionSearchRestaurants
 ```
+Abbiamo ora bisogno di definire le stories, creiamo quindi la cartella di riferimento a rasa_nlu che chiameremo data in cui inseriremo il file stories.md in cui definiremo alcune possibili conversazioni del bot:
+```
+## la prima storia che ho scritto
+  * saluto
+    - utter_saluto
+    - utter_default
+  * informazione{"cucina":"giapponese"}
+    - utter_ci_sono
+    - utter_posizione
+  * informazione{"posizione":"berlino"}
+    - utter_prezzo
+  * informazione{"prezzo":"basso"}
+    - utter_ricerca
+    - bot.ActionSearchRestaurants
+    - bot.ActionSuggest
+    - utter_arrivederci
+```
+*(per motivi di spazio l'intero codice del bot.py e del domain di core è possibile trovarlo [qui](example_core/second/), non è stato inserito perchè ripetitivo di cose già dette durante gli appunti)*
+Dobbiamo ancora impostare la configurazione del modello, creiamo un file yaml con il nome data/nlu_model_config.yml contenente una pipeline un po' complessa:
+```yaml
+pipeline:
+  - name: "nlp_spacy"
+  - name: "tokenizer_spacy"
+  - name: "intent_feturizer_spacy"
+  - name: "intent_classifier_sklearn"
+  - name: "ner_crf"
+  - name: "ner_synonymus"
+```
+E infine un set di dati su cui poter effettuare il training del modello di nlu che andremo a usare:
+```Json
+{
+    "rasa_nlu_data": {
+        "common_examples": [],
+        "regex_features" : [],
+        "entity_synonyms": []
+    }
+}
+```
+<!-- https://github.com/RasaHQ/rasa_core/tree/master/examples/restaurantbot -->
+
+
+<!-- https://core.rasa.com/tutorial_supervised.html#nlu-model -->

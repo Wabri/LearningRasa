@@ -42,6 +42,8 @@ templates:
     - "Dove?"
   utter_prezzo:
     - "Come deve essere il prezzo del ristorante?"
+  utter_ci_sono:
+    - "Perfetto, cominciamo la ricerca"
 
 actions:
   - utter_saluto
@@ -53,3 +55,4 @@ actions:
   - utter_richiesta_aiuto
   - utter_posizione
   - utter_prezzo
+  - bot.ActionSearchRestaurants
