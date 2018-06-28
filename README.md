@@ -18,7 +18,7 @@
 2. [Framework](#introduzione-al-framework-rasa_core)
 3. [Installazione](#installazione-core)
 4. [Primo esempio](#primo-semplice-bot) : [Domain](#definire-domain), [Interpreter](#definire-interpreter), [Stories](#definire-stories), [Training&Run](#training-and-run)
-5. [Secondo esempio](#training_supervisionato)
+5. [Secondo esempio](#training-supervisionato)
 
 ----------------------
 # RasaNLU
@@ -755,7 +755,7 @@ Abbiamo ora bisogno di definire le stories, creiamo quindi la cartella di riferi
   * informazione{"cucina":"giapponese"}
     - utter_ci_sono
     - utter_posizione
-  * informazione{"posizione":"berlino"}
+  * informazione{"posizione":"centro"}
     - utter_prezzo
   * informazione{"prezzo":"basso"}
     - utter_ricerca
@@ -764,6 +764,7 @@ Abbiamo ora bisogno di definire le stories, creiamo quindi la cartella di riferi
     - utter_arrivederci
 ```
 *(per motivi di spazio l'intero codice del bot.py e del domain di core è possibile trovarlo [qui](example_core/second/), non è stato inserito perchè ripetitivo di cose già dette durante gli appunti)*
+
 Dobbiamo ancora impostare la configurazione del modello, creiamo un file yaml con il nome data/nlu_model_config.yml contenente una pipeline un po' complessa:
 ```yaml
 pipeline:
@@ -777,14 +778,57 @@ pipeline:
 E infine un set di dati su cui poter effettuare il training del modello di nlu che andremo a usare:
 ```Json
 {
-    "rasa_nlu_data": {
-        "common_examples": [],
-        "regex_features" : [],
-        "entity_synonyms": []
-    }
+  "rasa_nlu_data": {
+    "regex_features": [],
+    "entity_synonyms": [],
+    "common_examples": [{
+      "text": "ciao",
+      "intent": "saluto",
+      "entities": []
+    }, {
+      "text": "salve",
+      "intent": "saluto",
+      "entities": []
+    }, {
+      "text": "grazie",
+      "intent": "ringraziamento",
+      "entities": []
+    }, {
+      "text": "buongiorno",
+      "intent": "saluto",
+      "entities": []
+    }, {
+      "text": "conosci qualche posto per mangiare la pizza?",
+      "intent": "informazioni",
+      "entities": [{
+        "start": 38,
+        "end": 43,
+        "value": "pizza",
+        "entity": "cucina"
+      }]
+    }, {
+      "text" : "In centro",
+      "intent" : "informazioni",
+      "entities" : [{
+          "start" : 3,
+          "end" : 9,
+          "value" : "centro",
+          "entity" : "posizione"
+        }]
+    }, {
+      "text" : "prezzo basso",
+      "intent" : "informazioni",
+      "entities" : [{
+        "start" : 7,
+        "end" : 12,
+        "value" : "basso",
+        "entity" : "prezzo"
+        }]
+      }]
+  }
 }
 ```
-<!-- https://github.com/RasaHQ/rasa_core/tree/master/examples/restaurantbot -->
-
-
-<!-- https://core.rasa.com/tutorial_supervised.html#nlu-model -->
+Per ragioni ovvie il data set che abbiamo creato non è molto ampio, ma serve per comprendere la storia precedentemente scritta. Saranno necessari altri esempi per poter avere un bot intelligente. Possiamo quindi eseguire il train del nostro modello con il seguente comando:
+```
+  python -m rasa_nlu.train -c nlu_model_config.yml --fixed_model_name current --data ./data/trainingData/base_data_set.json --path ./models/nlu
+```
