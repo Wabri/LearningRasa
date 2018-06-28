@@ -55,4 +55,5 @@ actions:
   - utter_richiesta_aiuto
   - utter_posizione
   - utter_prezzo
+  - utter_ci_sono
   - bot.ActionSearchRestaurants

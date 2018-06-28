@@ -1,0 +1,50 @@
+{
+  "rasa_nlu_data": {
+    "regex_features": [],
+    "entity_synonyms": [],
+    "common_examples": [{
+      "text": "ciao",
+      "intent": "saluto",
+      "entities": []
+    }, {
+      "text": "salve",
+      "intent": "saluto",
+      "entities": []
+    }, {
+      "text": "grazie",
+      "intent": "ringraziamento",
+      "entities": []
+    }, {
+      "text": "buongiorno",
+      "intent": "saluto",
+      "entities": []
+    }, {
+      "text": "conosci qualche posto per mangiare la pizza?",
+      "intent": "informazioni",
+      "entities": [{
+        "start": 38,
+        "end": 43,
+        "value": "pizza",
+        "entity": "cucina"
+      }]
+    }, {
+      "text": "In centro",
+      "intent": "informazioni",
+      "entities": [{
+        "start": 3,
+        "end": 9,
+        "value": "centro",
+        "entity": "posizione"
+      }]
+    }, {
+      "text": "prezzo basso",
+      "intent": "informazioni",
+      "entities": [{
+        "start": 7,
+        "end": 12,
+        "value": "basso",
+        "entity": "prezzo"
+      }]
+    }]
+  }
+}

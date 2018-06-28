@@ -658,6 +658,8 @@ Per prima cosa andiamo a creare il dominio del core che per completezza chiamere
 
 Prima di andare a implementare il domain del nlu ricordiamo la differenza tra **slots** e **entities**, dato le definizioni sembrano simile meglio specificare. La prima serve per salvarsi nel tempo le informazioni della discussione, mentre la seconda sono le informazioni trovate nella frase che l'utente invia al bot. Nell'esempio di prima la discussione inizia con **"Voglio andare a mangiare messicano!"** in cui sarà catturata l'entità *messicano* che corrisponderà per esempio al tipo di cucina che sarà copiata incollata nello slot di riferimento, per consigliare un posto dove mangiare servono più informazioni per esempio il posto quindi il bot risponderà **"In che zona della città?"** a questo punto l'utente risponderà qualcosa del tipo **"in centro"** dove verrà presa l'entità centro che corrisponderà al posto in cui il bot dovrà cercare il ristorante e come prima questa informazione verrà copiata incollata nello slot corrispondente. In termini di programmazione possiamo dire che gli **slots** sono informazioni globali che vengono salvate fintanto che l'oggetto non viene distrutto (in questo caso il nostro oggetto è la discussione che quando finirà gli slots verranno liberati), mentre le **entities** sono le variabili locali al metodo di parsing della frase e una volta richiamato il metodo tali variabili vengono inizializzate nuovamente. Spero di essermi spiegato... Inoltre gli slots non solo possono essere inizializzati con valori provenienti dalle entità, ma anche da risultati di chiamate esterne.
 
+***Prima di continuare è consigliato lo studio di [Domain, Slots, Action](https://core.rasa.com/domains.html) e di [Stories](https://core.rasa.com/stories.html)***
+
 Possiamo ora andare a scrivere il domain del core:
 ```yaml
 slots:
@@ -832,3 +834,10 @@ Per ragioni ovvie il data set che abbiamo creato non è molto ampio, ma serve pe
 ```
   python -m rasa_nlu.train -c nlu_model_config.yml --fixed_model_name current --data ./data/trainingData/base_data_set.json --path ./models/nlu
 ```
+*(è possibile anche usare uno script python, vedi [trainer.py](example_core/second/trainer.py))*
+
+Ho saltato:
+  - la parte delle dialog policy custom perchè non mi servono attualmente, vedi [A Custom Dialogue policy](https://core.rasa.com/tutorial_supervised.html#a-custom-dialogue-policy)
+  - [using-the-bot](https://core.rasa.com/tutorial_supervised.html#using-the-bot) per provare basta eseguire i comandi riportati [qui](example_core/second/realRestaurantbot/README.md)
+  - [interactive learning](https://core.rasa.com/tutorial_interactive_learning.html)
+  - [cose](https://core.rasa.com/patterns.html)
