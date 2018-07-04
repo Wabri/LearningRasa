@@ -19,6 +19,8 @@
 3. [Installazione](#installazione-core)
 4. [Primo esempio](#primo-semplice-bot) : [Domain](#definire-domain), [Interpreter](#definire-interpreter), [Stories](#definire-stories), [Training&Run](#training-and-run)
 5. [Secondo esempio](#training-supervisionato)
+6. [HTTP Server](#http-server)
+7. [Python API](#python-api)
 
 ----------------------
 # RasaNLU
@@ -413,7 +415,10 @@ class ApiAction(Action):
     data = requests.get(url).json
     return [SlotSet("api_result", data)]
 ```
+
+***
 <!-- manca da fare (per fatica) https://core.rasa.com/no_python.html#rasa-core-with-docker -->
+***
 
 ## Installazione core
 
@@ -831,13 +836,60 @@ E infine un set di dati su cui poter effettuare il training del modello di nlu c
 }
 ```
 Per ragioni ovvie il data set che abbiamo creato non è molto ampio, ma serve per comprendere la storia precedentemente scritta. Saranno necessari altri esempi per poter avere un bot intelligente. Possiamo quindi eseguire il train del nostro modello con il seguente comando:
-```
+``` bash
   python -m rasa_nlu.train -c nlu_model_config.yml --fixed_model_name current --data ./data/trainingData/base_data_set.json --path ./models/nlu
 ```
 *(è possibile anche usare uno script python, vedi [trainer.py](example_core/second/trainer.py))*
 
-Ho saltato:
+***
+<!-- Ho saltato:
   - la parte delle dialog policy custom perchè non mi servono attualmente, vedi [A Custom Dialogue policy](https://core.rasa.com/tutorial_supervised.html#a-custom-dialogue-policy)
   - [using-the-bot](https://core.rasa.com/tutorial_supervised.html#using-the-bot) per provare basta eseguire i comandi riportati [qui](example_core/second/realRestaurantbot/README.md)
   - [interactive learning](https://core.rasa.com/tutorial_interactive_learning.html)
   - [cose](https://core.rasa.com/patterns.html)
+-->
+***
+
+## HTTP Server
+
+Le HTTP api esistono per permettere l'uso di rasa core anche a non progetti python.
+Per fare questo è necessario eseguire RasaCore con un web server dove andiamo a passare il messaggio dell'utente. Rasa core una volta studiato il messaggio risponderà con le azioni da fare. Una volta eseguite è necessario notificare che sono state completate e dire al modello che lo stato del dialogo con questo user è cambiato. Tutto questo viene fatto con un'interfaccia di tipo HTTP REST.
+
+Prendendo un qualsiasi modello generato è possibile generare un server http usando questo comando:
+``` bash
+  python -m rasa_core.server -d <path_to_core_model> -u <path_to_nlu_model> -o out.log
+```
+L'ultimo argomento non è altro che il file dove stampare il log del server. Fatto questo le richieste dovranno essere fatte a localhost:5005, per esempio:
+``` bash
+  curl -XPOST localhost:5005/conversations/default/parse -d '{"query":"salve"}'
+```
+Che restituirà un JSON con il parse del messaggio e con l'azione.
+
+***
+<!-- non ho fatto: https://core.rasa.com/http.html#events -->
+***
+
+Non è sicuro esporre il server di rasa al modo ma mantenere privata la connessione con il server backend proprio. Per farlo è necessario specificare un token quando si fa il run del server, tale token è necessario passarlo per ogni richiesta. Per indicare questo token si esegue il server con un argomento in più **--auth_token** seguito dal token:
+``` bash
+  python -m rasa_core.server --auth_token <token> -d <path_to_core_model> -u <path_to_nlu_model> -o out.log
+```
+
+Od ogni richiesta del client sarà necessario passare il token definito da server, per esempio:
+``` bash
+  curl -XPOST localhost:5005/conversations/default/parse?token=<token> -d '{"query":"salve"}'
+```
+
+****
+<!--
+  non fatto:
+    - https://core.rasa.com/connectors.html
+    - https://core.rasa.com/scheduling.html
+-->
+****
+
+## Python API
+
+La documentazione completa è possibile trovarla nella pagina ufficiale:
+  1. [Agent](https://core.rasa.com/api/agent.html)
+  2. [Events](https://core.rasa.com/api/events.html)
+  3. [Tracker](https://core.rasa.com/api/tracker.html)
