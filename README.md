@@ -421,7 +421,7 @@ Non fatti:
 [:point_up:](#indice)
 
 ## 9 Evaluate model
-[:point_left:](#8-server-ed-emulazione) [:point_right:](#rasacore)
+[:point_left:](#8-server-ed-emulazione) [:point_right:](#1-introduzione-core)
 
 Possiamo valutare le performance di riconoscimento degli intenti e delle entità del modello che abbiamo creato usando lo script python **"evaluate.py"**, eseguendolo come segue:
 ```
@@ -436,6 +436,7 @@ In cui **model** specifica il modello da valutare specificando i data test con d
 [:point_up:](#indice)
 
 ## 1 Introduzione core
+[:point_left:](#9-evaluate-model) [:point_right:](#2-introduzione-al-framework-rasa_core)
 
 Rasa Core è un web service che permette in base a un input (intenti e entità nel nostro caso) di rispondere con delle azioni prefissate. nel nostro caso l'input che gli forniremo è il risultato del parsing di una frase da parte di rasa nlu.
 Per poter instaurare una conversazione con un utente è necessario l'utilizzo di una macchina a stati. Questo permetterà di mantenere i dati via via che il flow della conversazione continuerà. Per esempio un utente vuole effettuare un pagamento, rasa quindi collezionerà i dati via via che l'utente li fornisce e quando avrà completato il form di pagamento passerà ad un nuovo stato cioè quello di pagamento effettuato o del controllo della transazione.
@@ -445,6 +446,7 @@ Il codice di rasa core non è formato da una cascata di if else ma usa un modell
 [:point_up:](#indice)
 
 ## 2 Introduzione al framework rasa_core
+[:point_left:](#1-introduzione-core) [:point_right:](#3-installazione-core)
 
 python è senza dubbio il linguaggio più usato per il machine learning grazie alla grande quantità di framework sviluppati per questi scopi. Ovviamente la maggior parte dei bot di questo tipo sono scritti in javascript e molte delle altre strutture usate sono invece create e rilasciate in java, c#, etc.etc. Dato che Rasa Core è un framework, non è semplice integrarlo all'interno di un REST API facilmente come Rasa NLU.
 Per creare un bot con RasaCore è necessario:
@@ -473,6 +475,7 @@ class ApiAction(Action):
 [:point_up:](#indice)
 
 ## 3 Installazione core
+[:point_left:](#2-introduzione-al-framework-rasa_core) [:point_right:](#4-primo-semplice-bot)
 
 l'installazione raccomandata è usando il gestore di pacchetti python pip:
 ```
@@ -483,6 +486,8 @@ l'installazione raccomandata è usando il gestore di pacchetti python pip:
 [:point_up:](#indice)
 
 ## 4 Primo semplice bot
+[:point_left:](#3-installazione-core) [:point_right:](#41-definire-domain)
+
 Prima di iniziare con l'esempio, diamo una spiegazione di come i fili si collegano a partire da quando arriva il messaggio a quando viene restituito in output:
 0. **Message In** messaggio di input
 1. **Interpreter** converte il messaggio input in un dizionario che include il testo original, l'intento e le entità trovate
@@ -515,6 +520,8 @@ python -m spacy download en
 [:point_up:](#indice)
 
 #### 4.1 Definire Domain
+[:point_left:](#4-primo-semplice-bot) [:point_right:](#42-definire-interpreter)
+
 La prima cosa da fare è definire il Domain (domain.yml), che definisce l'universo in cui il nostro bot vivrà. Nel nostro caso sarà di questo tipo:
 ```yaml
 intents:
@@ -568,6 +575,7 @@ Rasa prende intent, entities e lo stato interno del dialogo per selezionare l'az
 [:point_up:](#indice)
 
 #### 4.2 Definire Interpreter
+[:point_left:](#41-definire-domain) [:point_right:](#43-definire.stories)
 
 L'interpreter è colui che esegue il parsing dei messaggi, in poche parole il NLU (natural language understanding). Trasforma frasi (messaggi dell'utente) in strutture descrittive della frase in input. Quello che useremo è ovviamente [RasaNLU](#rasanlu). Dato che nell'[esempio di rasanlu](#esempio-nlu) abbiamo usato un formato json per la definizione del set di dati, ora useremo un formato markdown. Inseriamo quindi nel file nlu_data.md il codice seguente:
 ```Markdown
@@ -661,6 +669,7 @@ Verrà creata una cartella *models/current/nlu* in cui sarà contenuto il modell
 [:point_up:](#indice)
 
 #### 4.3 Definire Stories
+[:point_left:](#42-definire-interpreter) [:point_right:](#44-training-and-run)
 
 La parte fondamentale per il core del nostro bot è definire le storie per insegnare al nostro bot cosa deve fare e a quale punto del dialogo. Una **Story** è un dato molto semplice per il training, utile per il sistema di gestione della discussione. Andremo a definire alcune storie nel nostro esempio modificando il file data/stories.md:
 ```Markdown
@@ -701,6 +710,7 @@ Noteremo che ci sono alcuni identificatori come:
 [:point_up:](#indice)
 
 #### 4.4 Training and Run
+[:point_left:](#43-definire-stories) [:point_right:](#5-training-supervisionato)
 
 A questo punto abbiamo tutto quello che ci serve per generare un modello, che è possibile crearlo con il solito comando:
 ```
@@ -717,6 +727,7 @@ Questo ci permetterà di usare finalmente il nostro bot (per ora solo a linea di
 [:point_up:](#indice)
 
 ## 5 Training supervisionato
+[:point_left:](#44-training-and-run) [:point_right:](#6-http-server)
 
 Come secondo esempio andremo a definire un nuovo esempio un po' più complesso, un bot di ricerca ristoranti (vedi [Esempio Rasa_nlu](#esempio-nlu)). Quando l'utente farà una richiesta del tipo **"Voglio andare a mangiare messicano!"** il bot dovrà essere capace di andare a chiedere altre informazioni e dettagli per suggerire il ristorante giusto (almeno la posizione di dove si vuole ricercare il ristorante).
 
@@ -918,6 +929,7 @@ Per ragioni ovvie il data set che abbiamo creato non è molto ampio, ma serve pe
 [:point_up:](#indice)
 
 ## 6 HTTP Server
+[:point_left:](#5-training-supervisionato) [:point_right:](#7-python-api)
 
 Le HTTP api esistono per permettere l'uso di rasa core anche a non progetti python.
 Per fare questo è necessario eseguire RasaCore con un web server dove andiamo a passare il messaggio dell'utente. Rasa core una volta studiato il messaggio risponderà con le azioni da fare. Una volta eseguite è necessario notificare che sono state completate e dire al modello che lo stato del dialogo con questo user è cambiato. Tutto questo viene fatto con un'interfaccia di tipo HTTP REST.
@@ -957,6 +969,7 @@ Od ogni richiesta del client sarà necessario passare il token definito da serve
 [:point_up:](#indice)
 
 ## 7 Python API
+[:point_left:](#6-http-server) [:point_right:](#indice)
 
 La documentazione completa è possibile trovarla nella pagina ufficiale:
   1. [Agent](https://core.rasa.com/api/agent.html)
