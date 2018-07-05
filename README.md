@@ -27,7 +27,7 @@
 1. [Introduzione](#1-introduzione-core)
 2. [Framework](#2-introduzione-al-framework-rasa_core)
 3. [Installazione](#3-installazione-core)
-4. [Primo esempio](#4-primo-semplice-bot) : [Domain](#4.1-definire-domain), [Interpreter](#4.2-definire-interpreter), [Stories](#4.3definire-stories), [Training&Run](#4.4training-and-run)
+4. [Primo esempio](#4-primo-semplice-bot) : [Domain](#41-definire-domain), [Interpreter](#42-definire-interpreter), [Stories](#43definire-stories), [Training&Run](#44training-and-run)
 5. [Secondo esempio](#5-training-supervisionato)
 6. [HTTP Server](#6-http-server)
 7. [Python API](#7-python-api)
