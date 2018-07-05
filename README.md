@@ -1,35 +1,41 @@
 # Rasa - Appunti e esempi
 --------------------
+***Commenti:*** *Ho trattato la maggior parte degli argomenti ma non tutti. Gli argomenti non trattati sono segnati come commenti al codice markdown e li ho inseriti tra linee separatrici come queste sotto:*
+  ******
+  <!-- commento -->
+  ******
+
 **Cosigli prima di iniziare:**
-  1. usare una macchina linux
-  2. usare python 2.7
+  1. Usare una macchina linux
+  2. Usare python 2.7
+  3. Non prendere gli appunti come perfetti, c'è una possibilità molto alta di trovare errori.
 --------------------
 
 ## Indice
 [RasaNLU](#rasanlu)
-1. [Introduzione](#introduzione-nlu)
-2. [Installazione](#installazione-nlu)
-3. [Esempio](#esempio-nlu)
-4. [Training](#training-nlu)
-5. [Backend](#backend-nlu)
-6. [Esportare Dialogflow](#esportare-dati-da-dialogflow)
-7. [Training Data](#struttura-del-training-data)
-8. [Server ed Emulazione](#server-ed-emulazione)
-9. [Valutare Modello](#evaluate-model)
+1. [Introduzione](#1-introduzione-nlu)
+2. [Installazione](#2-installazione-nlu)
+3. [Esempio](#3-esempio-nlu)
+4. [Training](#4-training-nlu)
+5. [Backend](#5-backend-nlu)
+6. [Esportare Dialogflow](#6-esportare-dati-da-dialogflow)
+7. [Training Data](#7-struttura-del-training-data)
+8. [Server ed Emulazione](#8-server-ed-emulazione)
+9. [Valutare Modello](#9-evaluate-model)
 
 [RasaCore](#rasacore)
-1. [Introduzione](#introduzione-core)
-2. [Framework](#introduzione-al-framework-rasa_core)
-3. [Installazione](#installazione-core)
-4. [Primo esempio](#primo-semplice-bot) : [Domain](#definire-domain), [Interpreter](#definire-interpreter), [Stories](#definire-stories), [Training&Run](#training-and-run)
-5. [Secondo esempio](#training-supervisionato)
-6. [HTTP Server](#http-server)
-7. [Python API](#python-api)
+1. [Introduzione](#1-introduzione-core)
+2. [Framework](#2-introduzione-al-framework-rasa_core)
+3. [Installazione](#3-installazione-core)
+4. [Primo esempio](#4-primo-semplice-bot) : [Domain](#4.1-definire-domain), [Interpreter](#4.2-definire-interpreter), [Stories](#4.3definire-stories), [Training&Run](#4.4training-and-run)
+5. [Secondo esempio](#5-training-supervisionato)
+6. [HTTP Server](#6-http-server)
+7. [Python API](#7-python-api)
 
 ----------------------
 # RasaNLU
 
-## Introduzione nlu
+## 1 Introduzione nlu
 Rasa_NLU è uno strumento per fare il [natural language understanding (NLU)](https://en.wikipedia.org/wiki/Natural_language_understanding).
 
 Questo è un open source tool che permette la classificazione degli intenti e l'estrazione delle entità usate negli intenti.
@@ -50,7 +56,7 @@ Quindi gli intent non sono altro che lo scopo della frase, mentre le entities so
 Questo strumento quindi serve per processare i messaggi. Infatti c'è un componente per la classificazione dell'intento e diversi componenti invece
 per il riconoscimento delle entità.
 
-## Installazione nlu
+## 2 Installazione nlu
 Per installare questo strumento è necessario python e pip:
 ```
 $ pip install rasa_nlu
@@ -69,7 +75,7 @@ $ python -m spacy link it_core_news_sm it
 ```
 ***(teoricamente crea già il link direttamente con il primo comando ma nel caso esplicitare il collegamento con il secondo comando)***
 
-## Esempio nlu
+## 3 Esempio nlu
 A questo punto possiamo fare un esempio: creare un bot per la ricerca di ristoranti.
 
 Definiamo quindi 3 tipologie di intenti:
@@ -93,7 +99,7 @@ Subito dopo deve riconoscere ed etichettare delle parole chiave definendo delle 
 1. "nord" che rappresenta una posizione,
 2. "messicano" che rappresenta il tipo di cucina.
 
-## Training nlu
+## 4 Training nlu
 Per poter fare tutto ciò è necessario allenare l'intelligenza. Il training è fondamentale, più dati abbiamo e più intellingente sarà la nostra intelligenza. Nel caso precedente abbiamo preso la frase ** "sono a nord della città e voglio mangiare messicano"** per far comprendere questa frase all'ai dobbiamo trascriverla sotto forma di file json in questo modo:
 ```Json
 {
@@ -136,7 +142,7 @@ $ rasa-nlu-trainer
 Che aprirà una pagina web ospitata in localhost in cui si troveranno tutti i
 train attuali dell'intelligenza.
 
-## Backend nlu
+## 5 Backend nlu
 Andiamo ora a definire la configurazione del backend dell'intelligenza. Creiamo quindi il file ** config_spacy.yml ** nella cartella di lavoro con il seguente
 codice:
 ```yaml
@@ -186,7 +192,7 @@ ricevere in output un file json con le informazioni del parsing fatto:
 }
 ```
 
-## Esportare dati da Dialogflow
+## 6 Esportare dati da Dialogflow
 
 Avendo già effettuato un training molto grande da dialogflow posso estrarre
 questi dati per usarli da rasa. Per farlo basterà scaricare il file zip
@@ -277,7 +283,7 @@ Che è il risultato corrispondente al parsing della frase usando il modello gene
 
 ***(Usando questi data training non potrà funzionare il rasa-nlu-trainer che abbiamo usato prima, ma useremo direttamente la console messa a disposizione da dialogflow.)***
 
-## Struttura del Training Data
+## 7 Struttura del Training Data
 
 Il training data per Rasa nlu è strutturato in parti differenti:
   1. common_examples,
@@ -338,7 +344,7 @@ Le **regex_features** non sono altro che le *regular expression* che possono ess
 
 I training data possono essere salvati in singoli file o in file diversi. Per grandi progetti con molti intenti e entità questo migliora la mantenibilità perchè è possibile dividere in file diversi i training di diversi intenti, invece di mantenerli su un singolo file.
 
-## Server ed emulazione
+## 8 Server ed emulazione
 
 Possiamo eseguire un server http che riceva le richieste usando il comando:
 ```
@@ -369,6 +375,7 @@ localhost:5000/status?token=12345
 ```
 Questo è necessario quando si vuole chiamare il server da un altro dominio (per esempio da un interfaccia training web), per rendere possibile la trasmissione di dati sarà necessario aggiungere in whitelist il dominio nel cors_origin. Il cors origin sono le configurazioni di [CORS (cross origin resource sharing)](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing).
 
+*****
 <!--
 Non fatti:
  - https://nlu.rasa.com/python.html
@@ -378,8 +385,9 @@ Non fatti:
  - https://nlu.rasa.com/languages.html
  - https://nlu.rasa.com/pipeline.html
 -->
+*****
 
-## Evaluate model
+## 9 Evaluate model
 
 Possiamo valutare le performance di riconoscimento degli intenti e delle entità del modello che abbiamo creato usando lo script python **"evaluate.py"**, eseguendolo come segue:
 ```
@@ -391,14 +399,14 @@ In cui **model** specifica il modello da valutare specificando i data test con d
 
 # RasaCore
 
-## Introduzione core
+## 1 Introduzione core
 
 Rasa Core è un web service che permette in base a un input (intenti e entità nel nostro caso) di rispondere con delle azioni prefissate. nel nostro caso l'input che gli forniremo è il risultato del parsing di una frase da parte di rasa nlu.
 Per poter instaurare una conversazione con un utente è necessario l'utilizzo di una macchina a stati. Questo permetterà di mantenere i dati via via che il flow della conversazione continuerà. Per esempio un utente vuole effettuare un pagamento, rasa quindi collezionerà i dati via via che l'utente li fornisce e quando avrà completato il form di pagamento passerà ad un nuovo stato cioè quello di pagamento effettuato o del controllo della transazione.
 Solitamente un bot semplice ha dai 5 ai 10 stati e un centinaio o migliaio di regole per gestire il suo comportamento.
 Il codice di rasa core non è formato da una cascata di if else ma usa un modello di predizione probabilistica in base alla scelta del modello che sceglierà l'azione da prendere, l'intelligenza del bot può essere trainata in molti modi. Un approccio di questo tipo porta a vantaggi come: debugging è più semplice, bot più flessibile, il bot migliora la sua esperienza senza scrivere altro codice, è possibile aggiungere funzionalità senza andare a debuggare migliaia di regole precedentemente definite.
 
-## Introduzione al framework rasa_core
+## 2 Introduzione al framework rasa_core
 
 python è senza dubbio il linguaggio più usato per il machine learning grazie alla grande quantità di framework sviluppati per questi scopi. Ovviamente la maggior parte dei bot di questo tipo sono scritti in javascript e molte delle altre strutture usate sono invece create e rilasciate in java, c#, etc.etc. Dato che Rasa Core è un framework, non è semplice integrarlo all'interno di un REST API facilmente come Rasa NLU.
 Per creare un bot con RasaCore è necessario:
@@ -424,7 +432,7 @@ class ApiAction(Action):
 <!-- manca da fare (per fatica) https://core.rasa.com/no_python.html#rasa-core-with-docker -->
 ***
 
-## Installazione core
+## 3 Installazione core
 
 l'installazione raccomandata è usando il gestore di pacchetti python pip:
 ```
@@ -432,7 +440,7 @@ l'installazione raccomandata è usando il gestore di pacchetti python pip:
 ```
 (è consigliato anche l'uso e installazione di [Anaconda](https://www.anaconda.com/what-is-anaconda/))
 
-## Primo semplice bot
+## 4 Primo semplice bot
 Prima di iniziare con l'esempio, diamo una spiegazione di come i fili si collegano a partire da quando arriva il messaggio a quando viene restituito in output:
 0. **Message In** messaggio di input
 1. **Interpreter** converte il messaggio input in un dizionario che include il testo original, l'intento e le entità trovate
@@ -461,7 +469,7 @@ pip install rasa_core
 python -m spacy download en  
 ```
 (ovviamente è possibile scaricare e usare anche linguaggi: italiano, spagnolo, portoghese, etc.etc. che è possibile trovare [qui](https://spacy.io/models/)
-#### Definire Domain
+#### 4.1 Definire Domain
 La prima cosa da fare è definire il Domain (domain.yml), che definisce l'universo in cui il nostro bot vivrà. Nel nostro caso sarà di questo tipo:
 ```yaml
 intents:
@@ -512,7 +520,7 @@ Ci sono diverse parti che compongono questo file di configurazione:
 
 Rasa prende intent, entities e lo stato interno del dialogo per selezionare l'azione che deve essere eseguita successivamente. Se l'azione è solo dire qualcosa allo user allora Rasa guarderà se esiste un template definito nel domain che corrisponde a questa azione, una volta che la trova viene inviata all'utente di partenza.
 
-#### Definire Interpreter
+#### 4.2 Definire Interpreter
 
 L'interpreter è colui che esegue il parsing dei messaggi, in poche parole il NLU (natural language understanding). Trasforma frasi (messaggi dell'utente) in strutture descrittive della frase in input. Quello che useremo è ovviamente [RasaNLU](#rasanlu). Dato che nell'[esempio di rasanlu](#esempio-nlu) abbiamo usato un formato json per la definizione del set di dati, ora useremo un formato markdown. Inseriamo quindi nel file nlu_data.md il codice seguente:
 ```Markdown
@@ -603,7 +611,7 @@ python -m rasa_nlu.train -c nlu_config.yml --data data/nlu_data.md -o models --f
 ```
 Verrà creata una cartella *models/current/nlu* in cui sarà contenuto il modello creato.
 
-#### Definire Stories
+#### 4.3 Definire Stories
 
 La parte fondamentale per il core del nostro bot è definire le storie per insegnare al nostro bot cosa deve fare e a quale punto del dialogo. Una **Story** è un dato molto semplice per il training, utile per il sistema di gestione della discussione. Andremo a definire alcune storie nel nostro esempio modificando il file data/stories.md:
 ```Markdown
@@ -641,7 +649,7 @@ Noteremo che ci sono alcuni identificatori come:
 * `-` è la risposta che deve dare il bot in questo caso, le risposte sono predefinite nel file domain.yml
 * `newline` è la fine della storia
 
-#### Training and Run
+#### 4.4 Training and Run
 
 A questo punto abbiamo tutto quello che ci serve per generare un modello, che è possibile crearlo con il solito comando:
 ```
@@ -655,7 +663,7 @@ Per usare sia il modello per nlu e il modello di core, andremo ad eseguire il co
 ```
 Questo ci permetterà di usare finalmente il nostro bot (per ora solo a linea di comando).
 
-## Training supervisionato
+## 5 Training supervisionato
 
 Come secondo esempio andremo a definire un nuovo esempio un po' più complesso, un bot di ricerca ristoranti (vedi [Esempio Rasa_nlu](#esempio-nlu)). Quando l'utente farà una richiesta del tipo **"Voglio andare a mangiare messicano!"** il bot dovrà essere capace di andare a chiedere altre informazioni e dettagli per suggerire il ristorante giusto (almeno la posizione di dove si vuole ricercare il ristorante).
 
@@ -854,7 +862,7 @@ Per ragioni ovvie il data set che abbiamo creato non è molto ampio, ma serve pe
 -->
 ***
 
-## HTTP Server
+## 6 HTTP Server
 
 Le HTTP api esistono per permettere l'uso di rasa core anche a non progetti python.
 Per fare questo è necessario eseguire RasaCore con un web server dove andiamo a passare il messaggio dell'utente. Rasa core una volta studiato il messaggio risponderà con le azioni da fare. Una volta eseguite è necessario notificare che sono state completate e dire al modello che lo stato del dialogo con questo user è cambiato. Tutto questo viene fatto con un'interfaccia di tipo HTTP REST.
@@ -891,7 +899,7 @@ Od ogni richiesta del client sarà necessario passare il token definito da serve
 -->
 ****
 
-## Python API
+## 7 Python API
 
 La documentazione completa è possibile trovarla nella pagina ufficiale:
   1. [Agent](https://core.rasa.com/api/agent.html)
