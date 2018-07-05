@@ -436,7 +436,7 @@ In cui **model** specifica il modello da valutare specificando i data test con d
 [:point_up:](#indice)
 
 ## 1 Introduzione core
-[:point_left:](#9-evaluate-model) [:point_right:](#2-introduzione-al-framework-rasa_core)
+[:point_left:](#indice) [:point_right:](#2-introduzione-al-framework-rasa_core)
 
 Rasa Core è un web service che permette in base a un input (intenti e entità nel nostro caso) di rispondere con delle azioni prefissate. nel nostro caso l'input che gli forniremo è il risultato del parsing di una frase da parte di rasa nlu.
 Per poter instaurare una conversazione con un utente è necessario l'utilizzo di una macchina a stati. Questo permetterà di mantenere i dati via via che il flow della conversazione continuerà. Per esempio un utente vuole effettuare un pagamento, rasa quindi collezionerà i dati via via che l'utente li fornisce e quando avrà completato il form di pagamento passerà ad un nuovo stato cioè quello di pagamento effettuato o del controllo della transazione.
