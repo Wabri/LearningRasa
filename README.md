@@ -7,7 +7,7 @@
 
 **Cosigli prima di iniziare:**
   1. Usare una macchina linux
-  2. Usare python 2.7
+  2. Usare python 2.7 o 3.6 (non 3.7)
   3. Non prendere gli appunti come perfetti, c'è una possibilità molto alta di trovare errori.
   4. Quando trovate questo [:point_up:](#indice) simbolo cliccandolo tornerete all'indice.
   5. è possibile spostarsi tra un argomento e l'altro usando questi simboli [:point_left:](#rasa---appunti-e-esempi) [:point_right:](#indice)
