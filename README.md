@@ -9,9 +9,10 @@
   1. Usare una macchina linux
   2. Usare python 2.7
   3. Non prendere gli appunti come perfetti, c'è una possibilità molto alta di trovare errori.
-  4. Quando trovate questo [:point_up:](#indice) simbolo cliccandolo tornerete all'indice
+  4. Quando trovate questo [:point_up:](#indice) simbolo cliccandolo tornerete all'indice.
+  5. è possibile spostarsi tra un argomento e l'altro usando questi simboli [:point_left:](#rasa---appunti-e-esempi) [:point_right:](#indice)
 --------------------
-
+[:point_left:](#rasa---appunti-e-esempi) [:point_right:](#rasanlu)
 ## Indice
 [RasaNLU](#rasanlu)
 1. [Introduzione](#1-introduzione-nlu)
@@ -39,6 +40,8 @@
 [:point_up:](#indice)
 
 ## 1 Introduzione nlu
+[:point_left:](#indice) [:point_right:](#2-installazione-nlu)
+
 Rasa_NLU è uno strumento per fare il [natural language understanding (NLU)](https://en.wikipedia.org/wiki/Natural_language_understanding).
 
 Questo è un open source tool che permette la classificazione degli intenti e l'estrazione delle entità usate negli intenti.
@@ -62,6 +65,8 @@ per il riconoscimento delle entità.
 [:point_up:](#indice)
 
 ## 2 Installazione nlu
+[:point_left:](#1-introduzione) [:point_right:](#3-esempio-nlu)
+
 Per installare questo strumento è necessario python e pip:
 ```
 $ pip install rasa_nlu
@@ -83,6 +88,8 @@ $ python -m spacy link it_core_news_sm it
 [:point_up:](#indice)
 
 ## 3 Esempio nlu
+[:point_left:](#2-installazione) [:point_right:](#4-training-nlu)
+
 A questo punto possiamo fare un esempio: creare un bot per la ricerca di ristoranti.
 
 Definiamo quindi 3 tipologie di intenti:
@@ -109,6 +116,8 @@ Subito dopo deve riconoscere ed etichettare delle parole chiave definendo delle 
 [:point_up:](#indice)
 
 ## 4 Training nlu
+[:point_left:](#3-esempio-nlu) [:point_right:](#5-backend-nlu)
+
 Per poter fare tutto ciò è necessario allenare l'intelligenza. Il training è fondamentale, più dati abbiamo e più intellingente sarà la nostra intelligenza. Nel caso precedente abbiamo preso la frase ** "sono a nord della città e voglio mangiare messicano"** per far comprendere questa frase all'ai dobbiamo trascriverla sotto forma di file json in questo modo:
 ```Json
 {
@@ -154,6 +163,8 @@ train attuali dell'intelligenza.
 [:point_up:](#indice)
 
 ## 5 Backend nlu
+[:point_left:](#4-training-nlu) [:point_right:](#6-esportare-dati-da-dialogflow)
+
 Andiamo ora a definire la configurazione del backend dell'intelligenza. Creiamo quindi il file ** config_spacy.yml ** nella cartella di lavoro con il seguente
 codice:
 ```yaml
@@ -206,6 +217,7 @@ ricevere in output un file json con le informazioni del parsing fatto:
 [:point_up:](#indice)
 
 ## 6 Esportare dati da Dialogflow
+[:point_left:](#5-backend-nlu) [:point_right:](#7-struttura-del-training-data)
 
 Avendo già effettuato un training molto grande da dialogflow posso estrarre
 questi dati per usarli da rasa. Per farlo basterà scaricare il file zip
@@ -299,6 +311,7 @@ Che è il risultato corrispondente al parsing della frase usando il modello gene
 [:point_up:](#indice)
 
 ## 7 Struttura del Training Data
+[:point_left:](#6-esportare-dati-da-dialogflow) [:point_right:](#8-server-ed-emulazione)
 
 Il training data per Rasa nlu è strutturato in parti differenti:
   1. common_examples,
@@ -362,6 +375,7 @@ I training data possono essere salvati in singoli file o in file diversi. Per gr
 [:point_up:](#indice)
 
 ## 8 Server ed emulazione
+[:point_left:](#7-struttura-del-training-data) [:point_right:](#9-evaluate-model)
 
 Possiamo eseguire un server http che riceva le richieste usando il comando:
 ```
@@ -407,6 +421,7 @@ Non fatti:
 [:point_up:](#indice)
 
 ## 9 Evaluate model
+[:point_left:](#8-server-ed-emulazione) [:point_right:](#rasacore)
 
 Possiamo valutare le performance di riconoscimento degli intenti e delle entità del modello che abbiamo creato usando lo script python **"evaluate.py"**, eseguendolo come segue:
 ```
