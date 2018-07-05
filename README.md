@@ -1,5 +1,9 @@
 # Rasa - Appunti e esempi
 --------------------
+**Cosigli prima di iniziare:**
+  1. usare una macchina linux
+  2. usare python 2.7
+--------------------
 
 ## Indice
 [RasaNLU](#rasanlu)
