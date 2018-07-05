@@ -65,7 +65,7 @@ per il riconoscimento delle entità.
 [:point_up:](#indice)
 
 ## 2 Installazione nlu
-[:point_left:](#1-introduzione) [:point_right:](#3-esempio-nlu)
+[:point_left:](#1-introduzione-nlu) [:point_right:](#3-esempio-nlu)
 
 Per installare questo strumento è necessario python e pip:
 ```
@@ -88,7 +88,7 @@ $ python -m spacy link it_core_news_sm it
 [:point_up:](#indice)
 
 ## 3 Esempio nlu
-[:point_left:](#2-installazione) [:point_right:](#4-training-nlu)
+[:point_left:](#2-installazione-nlu) [:point_right:](#4-training-nlu)
 
 A questo punto possiamo fare un esempio: creare un bot per la ricerca di ristoranti.
 
