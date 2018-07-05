@@ -575,7 +575,7 @@ Rasa prende intent, entities e lo stato interno del dialogo per selezionare l'az
 [:point_up:](#indice)
 
 #### 4.2 Definire Interpreter
-[:point_left:](#41-definire-domain) [:point_right:](#43-definire.stories)
+[:point_left:](#41-definire-domain) [:point_right:](#43-definire-stories)
 
 L'interpreter è colui che esegue il parsing dei messaggi, in poche parole il NLU (natural language understanding). Trasforma frasi (messaggi dell'utente) in strutture descrittive della frase in input. Quello che useremo è ovviamente [RasaNLU](#rasanlu). Dato che nell'[esempio di rasanlu](#esempio-nlu) abbiamo usato un formato json per la definizione del set di dati, ora useremo un formato markdown. Inseriamo quindi nel file nlu_data.md il codice seguente:
 ```Markdown
