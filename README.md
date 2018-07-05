@@ -421,7 +421,7 @@ Non fatti:
 [:point_up:](#indice)
 
 ## 9 Evaluate model
-[:point_left:](#8-server-ed-emulazione) [:point_right:](#1-introduzione-core)
+[:point_left:](#8-server-ed-emulazione) [:point_right:](#rasanlu)
 
 Possiamo valutare le performance di riconoscimento degli intenti e delle entità del modello che abbiamo creato usando lo script python **"evaluate.py"**, eseguendolo come segue:
 ```
@@ -969,7 +969,7 @@ Od ogni richiesta del client sarà necessario passare il token definito da serve
 [:point_up:](#indice)
 
 ## 7 Python API
-[:point_left:](#6-http-server) [:point_right:](#indice)
+[:point_left:](#6-http-server) [:point_right:](#rasacore)
 
 La documentazione completa è possibile trovarla nella pagina ufficiale:
   1. [Agent](https://core.rasa.com/api/agent.html)
