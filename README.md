@@ -5,6 +5,11 @@
   <!-- commento -->
   ******
 
+***Versione***
+*Questi appunti sono stati fatti a partire dai docs di rasa nella versione 0.9*
+*L'ultimo aggiornamento di questi appunti è stato fatto nel giugno del 2018*
+*Una nuova versione dei docs è stata rilasciata nel luglio del 2018, ancora non ho aggiornato questi appunti*
+
 **Cosigli prima di iniziare:**
   1. Usare una macchina linux
   2. Usare python 2.7 o 3.6 (non 3.7)
