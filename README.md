@@ -1,14 +1,15 @@
 # Rasa - Appunti e esempi
 --------------------
+***Versione:***
+*Questi appunti sono stati fatti a partire dai docs di rasa nella versione 0.9*
+*L'ultimo aggiornamento di questi appunti è stato fatto nel giugno del 2018*
+*Una nuova versione dei docs è stata rilasciata nel luglio del 2018, ancora non ho aggiornato questi appunti*
+
+
 ***Commenti:*** *Ho trattato la maggior parte degli argomenti ma non tutti. Gli argomenti non trattati sono segnati come commenti al codice markdown e li ho inseriti tra linee separatrici come queste sotto:*
   ******
   <!-- commento -->
   ******
-
-***Versione***
-*Questi appunti sono stati fatti a partire dai docs di rasa nella versione 0.9*
-*L'ultimo aggiornamento di questi appunti è stato fatto nel giugno del 2018*
-*Una nuova versione dei docs è stata rilasciata nel luglio del 2018, ancora non ho aggiornato questi appunti*
 
 **Cosigli prima di iniziare:**
   1. Usare una macchina linux
